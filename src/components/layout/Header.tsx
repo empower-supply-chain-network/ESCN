@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 import { useAuth } from '@/hooks/useAuth';
 
 // --- 1. IMPORT THE LOGO IMAGE ---
-import logoImage from '/ESCN_Logo.png';
+import logoImage from '@/assets/images/ESCN_Logo.png'; 
 
 const navLinks = [
   { href: '/about', label: 'About Us' },

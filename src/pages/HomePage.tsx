@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { openModal } from '@/store/slices/uiSlice';
 
 // --- 1. IMPORT THE HERO IMAGE ---
-import heroImage from '/Homepage_Photo_3.png';
+import heroImage from '@/assets/images/Homepage_Photo_3.png';
 
 const HomePage = () => {
   const dispatch = useDispatch();

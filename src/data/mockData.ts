@@ -1,5 +1,11 @@
 import { Founder, Job, SuccessStory, Program } from '@/types';
 
+// --- 1. IMPORT THE IMAGES AT THE TOP ---
+// The `@` symbol is a shortcut for the `src` folder.
+import shuyaImage from '@/assets/images/Shuya.png';
+import michelleImage from '@/assets/images/Michelle.jpg';
+
+
 export const mockFounders: Founder[] = [
   {
     id: '1',
@@ -11,7 +17,8 @@ export const mockFounders: Founder[] = [
       "Eventually, securing a role as a logistics and executive assistant ignited a spark of hope, serving as the cornerstone of my career. Evolving within the supply chain arena, each decision propelled me forward, culminating in my current role as Senior manager overseeing imports and transport operations.",
       "<strong>Embracing the challenges, I've emerged stronger, believing that adversity breeds resilience.</strong> Beyond the corporate realm, community volunteering has been my solace, sparking vision to create a supportive community for those enduring similar struggles."
     ],
-    imageUrl: '/Shuya.png',
+    // --- 2. USE THE IMPORTED IMAGE VARIABLE ---
+    imageUrl: shuyaImage,
   },
   {
     id: '2',
@@ -22,7 +29,8 @@ export const mockFounders: Founder[] = [
       "After over 15 years in China's supply chain management, moving to Canada in 2017 presented unexpected challenges. Lacking local experience and education, I felt helpless and struggled to restart my career. Through determination and reeducation, I've worked as an Import & Export Specialist in Canada for over 4 years, earning CPIM and CSCP certifications, and transitioning to a supply planning role.",
       "<strong>This personal journey highlighted the struggles that many new immigrants face despite their excellent backgrounds.</strong> They possess valuable skills and experience that could greatly benefit local companies, but often lack the support to navigate the Canadian industry. This realization inspired me to co-found this organization, aiming to empower those facing similar struggles by providing support on career paths, reeducation, networking, skill learning, and experience sharing. I want to help them find a better life in Canada, just as I did."
     ],
-    imageUrl: '/Michelle.jpg',
+    // --- 3. USE THE IMPORTED IMAGE VARIABLE ---
+    imageUrl: michelleImage,
   },
 ];
 
@@ -39,7 +47,7 @@ export const mockSuccessStories: SuccessStory[] = [
 ];
 
 export const mockPrograms: Program[] = [
-  { id: 'continuous-education', title: 'Continuous Education', subtitle: '📚 Learn & Grow', description: 'Partner with leading educational institutions to provide ongoing learning opportunities.' },
-  { id: 'certifications', title: 'Supply Chain Certifications', subtitle: '🏆 Get Certified', description: 'Prepare for and earn industry-recognized certifications: CPIM, CSCP, and CLTD.' },
-  { id: 'mentorship', title: 'Mentorship Program', subtitle: '🤝 Connect & Guide', description: 'Connect with experienced professionals who can guide your career journey.' },
+    { id: 'continuous-education', title: 'Continuous Education', subtitle: '📚 Learn & Grow', description: 'Partner with leading educational institutions to provide ongoing learning opportunities.' },
+    { id: 'certifications', title: 'Supply Chain Certifications', subtitle: '🏆 Get Certified', description: 'Prepare for and earn industry-recognized certifications: CPIM, CSCP, and CLTD.' },
+    { id: 'mentorship', title: 'Mentorship Program', subtitle: '🤝 Connect & Guide', description: 'Connect with experienced professionals who can guide your career journey.' },
 ];
