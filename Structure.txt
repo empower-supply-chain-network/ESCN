@@ -1,0 +1,65 @@
+/
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+├── public/
+│   ├── ESCN_Logo.png
+│   ├── Homepage_Photo_3.png
+│   ├── Michelle.jpg
+│   └── Shuya.png
+└── src/
+    ├── App.tsx
+    ├── main.tsx
+    ├── assets/
+    │   └── index.css
+    ├── components/
+    │   ├── layout/
+    │   │   ├── Footer.tsx
+    │   │   └── Header.tsx
+    │   ├── modals/
+    │   │   ├── BaseModal.tsx
+    │   │   ├── LoginModal.tsx
+    │   │   └── MembershipModal.tsx
+    │   ├── shared/
+    │   │   ├── Loader.tsx
+    │   │   └── SectionTitle.tsx
+    │   └── ui/
+    │       ├── Button.tsx
+    │       ├── Card.tsx
+    │       └── Tabs.tsx
+    ├── config/
+    │   └── firebase.ts
+    ├── data/
+    │   └── mockData.ts
+    ├── hooks/
+    │   ├── useAuth.ts
+    │   └── useTypedSelector.ts
+    ├── pages/
+    │   ├── AboutPage/
+    │   │   ├── DnaSection.tsx
+    │   │   ├── FoundersSection.tsx
+    │   │   ├── index.tsx
+    │   │   └── WhoWeAreSection.tsx
+    │   ├── EventsPage.tsx
+    │   ├── HomePage.tsx
+    │   ├── JobsPage.tsx
+    │   ├── ProgramsPage.tsx
+    │   └── SuccessStoriesPage.tsx
+    ├── services/
+    │   ├── authService.ts
+    │   └── dataService.ts
+    ├── store/
+    │   ├── slices/
+    │   │   ├── authSlice.ts
+    │   │   ├── dataSlice.ts
+    │   │   └── uiSlice.ts
+    │   └── store.ts
+    ├── types/
+    │   └── index.ts
+    └── utils/
+        └── cn.ts

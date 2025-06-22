@@ -1,0 +1,22 @@
+echo "
+# Dependency directories
+/node_modules/
+/dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.*
+!/.env.example
+
+# macOS
+.DS_Store
+
+# Other files to ignore
+*.txt
+*.docx
+" > .gitignore
