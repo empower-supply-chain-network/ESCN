@@ -6,6 +6,9 @@ import { openModal } from '@/store/slices/uiSlice';
 import { cn } from '@/utils/cn';
 import { useAuth } from '@/hooks/useAuth';
 
+// --- 1. IMPORT THE LOGO IMAGE ---
+import logoImage from '/ESCN_Logo.png';
+
 const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/events', label: 'Events' },
@@ -23,13 +26,11 @@ export function Header() {
   };
 
   return (
-    // THE ONLY CHANGE IS ON THIS LINE:
-    // Removed bg-white-linen/80 and backdrop-blur-sm
-    // Replaced with the solid bg-white-linen
     <header className="fixed top-0 z-50 w-full bg-white-linen shadow-sm border-b border-border-light">
       <nav className="container flex items-center justify-between max-w-6xl py-2 mx-auto px-4">
         <Link to="/" className="flex-shrink-0">
-          <img src="/ESCN_Logo.png" alt="ChainSpark Logo" className="block w-auto h-20" />
+          {/* --- 2. USE THE IMPORTED IMAGE VARIABLE --- */}
+          <img src={logoImage} alt="ChainSpark Logo" className="block w-auto h-20" />
         </Link>
         
         <div className="hidden lg:flex items-center gap-6">
@@ -40,7 +41,7 @@ export function Header() {
                 className={({ isActive }) =>
                   cn(
                     'text-text-primary font-medium transition-colors hover:text-emerald-green',
-                    isActive ? 'text-emerald-green font-semibold' : '' // Style for the active link
+                    isActive ? 'text-emerald-green font-semibold' : ''
                   )
                 }
               >
@@ -54,7 +55,6 @@ export function Header() {
             <Button variant="outline" size="sm" onClick={handleLoginClick}>Login</Button>
            )}
         </div>
-        {/* A placeholder for a potential mobile menu button */}
         <div className="lg:hidden">
             {/* Mobile menu logic would go here */}
         </div>

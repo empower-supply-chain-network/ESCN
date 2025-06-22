@@ -4,12 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { openModal } from '@/store/slices/uiSlice';
 
+// --- 1. IMPORT THE HERO IMAGE ---
+import heroImage from '/Homepage_Photo_3.png';
+
 const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
-    <section className="relative flex items-center justify-center w-full min-h-screen pt-24 text-center bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('/Homepage_Photo_3.png')" }}>
+    // --- 2. USE THE IMPORTED IMAGE VARIABLE ---
+    <section className="relative flex items-center justify-center w-full min-h-screen pt-24 text-center bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="absolute inset-0 bg-black/40" />
       <div className="container relative z-10 max-w-4xl mx-auto">
         <motion.div 
@@ -18,7 +22,6 @@ const HomePage = () => {
           transition={{ duration: 0.8 }}
           className="p-4"
         >
-          {/* --- THIS IS THE CORRECTED LINE --- */}
           <h1 className="text-5xl font-bold text-white lg:text-6xl whitespace-nowrap" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}>
             Empower Supply Chain Network
           </h1>
