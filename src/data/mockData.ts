@@ -1,7 +1,6 @@
-import { Founder, Job, SuccessStory, Program } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
 
-// --- 1. IMPORT THE IMAGES AT THE TOP ---
-// The `@` symbol is a shortcut for the `src` folder.
+// --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
 import michelleImage from '@/assets/images/Michelle.jpg';
 
@@ -17,7 +16,6 @@ export const mockFounders: Founder[] = [
       "Eventually, securing a role as a logistics and executive assistant ignited a spark of hope, serving as the cornerstone of my career. Evolving within the supply chain arena, each decision propelled me forward, culminating in my current role as Senior manager overseeing imports and transport operations.",
       "<strong>Embracing the challenges, I've emerged stronger, believing that adversity breeds resilience.</strong> Beyond the corporate realm, community volunteering has been my solace, sparking vision to create a supportive community for those enduring similar struggles."
     ],
-    // --- 2. USE THE IMPORTED IMAGE VARIABLE ---
     imageUrl: shuyaImage,
   },
   {
@@ -29,7 +27,6 @@ export const mockFounders: Founder[] = [
       "After over 15 years in China's supply chain management, moving to Canada in 2017 presented unexpected challenges. Lacking local experience and education, I felt helpless and struggled to restart my career. Through determination and reeducation, I've worked as an Import & Export Specialist in Canada for over 4 years, earning CPIM and CSCP certifications, and transitioning to a supply planning role.",
       "<strong>This personal journey highlighted the struggles that many new immigrants face despite their excellent backgrounds.</strong> They possess valuable skills and experience that could greatly benefit local companies, but often lack the support to navigate the Canadian industry. This realization inspired me to co-found this organization, aiming to empower those facing similar struggles by providing support on career paths, reeducation, networking, skill learning, and experience sharing. I want to help them find a better life in Canada, just as I did."
     ],
-    // --- 3. USE THE IMPORTED IMAGE VARIABLE ---
     imageUrl: michelleImage,
   },
 ];
@@ -50,4 +47,26 @@ export const mockPrograms: Program[] = [
     { id: 'continuous-education', title: 'Continuous Education', subtitle: '📚 Learn & Grow', description: 'Partner with leading educational institutions to provide ongoing learning opportunities.' },
     { id: 'certifications', title: 'Supply Chain Certifications', subtitle: '🏆 Get Certified', description: 'Prepare for and earn industry-recognized certifications: CPIM, CSCP, and CLTD.' },
     { id: 'mentorship', title: 'Mentorship Program', subtitle: '🤝 Connect & Guide', description: 'Connect with experienced professionals who can guide your career journey.' },
+];
+
+// NEW: Data for the "Join Us" page benefits
+export const mockMemberBenefits: MemberBenefit[] = [
+  { id: '1', title: 'Networking Events', description: 'Industry mixers and round table discussions on hot topics to facilitate connections and collaboration.', icon: '🤝' },
+  { id: '2', title: 'Knowledge Sharing Platforms', description: 'Access to exclusive webinars and workshops hosted by industry leaders and subject matter experts.', icon: '📚' },
+  { id: '3', title: 'Mentorship Program', description: 'Match with experienced supply chain professionals for guidance and career development opportunities.', icon: '🚀' },
+  { id: '4', title: 'Diversity and Inclusion Initiatives', description: 'Participate in inclusive leadership programs to create diverse and welcoming work environments.', icon: '🌍' },
+  { id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', icon: '💼' },
+];
+
+// NEW: Data for the Sponsorship page
+export const mockSponsorshipTiers: SponsorshipTier[] = [
+  // Educational Institution Tiers
+  { id: 'edu1', category: 'Educational Institution', tier: 'Basic Tier', title: 'Foundation Membership', investment: '$2,500 - $5,000', benefits: ["Access to ChainSpark's online resources", 'Listing on website as a supporting institution', 'Event invitations for representatives and students', 'Access to a directory of ChainSpark members', 'Allows students to join free on some events (career fair, online workshops)'] },
+  { id: 'edu2', category: 'Educational Institution', tier: 'Intermediate Tier', title: 'Engagement Partner', investment: '$5,000 - $10,000 annually', benefits: ['All benefits from the Basic Tier', 'Opportunities for students to apply for internships', 'Invitation for ChainSpark members to speak at events', 'Access to specialized webinars and workshops'] },
+  { id: 'edu3', category: 'Educational Institution', tier: 'Premium Tier', title: 'Strategic Partner', investment: '$10,000 - $25,000 Annually', benefits: ['All benefits from the Intermediate Tier', 'Tailored internship programs designed in collaboration', 'Sponsorship recognition at major events', 'Access to mentorship from industry professionals for students'] },
+  // Internship Partner
+  { id: 'int1', category: 'Internship Partner', tier: '', title: 'Internship Placement Partner', benefits: ['Work with ChainSpark to place students in internships', 'Logo placement on program website and marketing materials', 'Acknowledgement in newsletters and social media', '5 VIP passes to ChainSpark events', 'Opportunities to participate in intern review and feedback sessions'] },
+  // Certification Sponsor Tiers
+  { id: 'cert1', category: 'Certification Sponsor', tier: 'Basic', title: 'Basic Certification Sponsor', investment: '10-15% discount on course enrollments', benefits: ['Exclusive promotional offers for members', 'Listed as a Certification Sponsor on website', 'Opportunity to promote programs at events', 'Feature in quarterly newsletter'] },
+  { id: 'cert2', category: 'Certification Sponsor', tier: 'Advanced', title: 'Advanced Certification Sponsor', investment: '15-25% discount on course enrollments', benefits: ['Offer limited scholarships or reduced rates', 'Prominent listing as an Advanced Sponsor', 'Host a dedicated webinar for ChainSpark members', 'Collaborate on a customized marketing campaign'] },
 ];

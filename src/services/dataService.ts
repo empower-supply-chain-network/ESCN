@@ -1,9 +1,9 @@
 // MOCK DATA SERVICE
 // This simulates fetching data from a Firestore database.
 
-import { Founder, Job, SuccessStory, Program } from '@/types';
-// Import the new mock data array
-import { mockFounders, mockJobs, mockSuccessStories, mockPrograms } from '@/data/mockData';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
+// Import the new mock data arrays
+import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers } from '@/data/mockData';
 
 const simulateNetworkDelay = <T>(data: T): Promise<T> => {
   return new Promise(resolve => {
@@ -25,7 +25,15 @@ export const getSuccessStories = (): Promise<SuccessStory[]> => {
   return simulateNetworkDelay(mockSuccessStories);
 };
 
-// Add the new function to get programs
 export const getPrograms = (): Promise<Program[]> => {
     return simulateNetworkDelay(mockPrograms);
+};
+
+// NEW: Add these two functions
+export const getMemberBenefits = (): Promise<MemberBenefit[]> => {
+  return simulateNetworkDelay(mockMemberBenefits);
+};
+
+export const getSponsorshipTiers = (): Promise<SponsorshipTier[]> => {
+  return simulateNetworkDelay(mockSponsorshipTiers);
 };

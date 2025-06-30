@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Founder, Job, SuccessStory, Program } from '@/types'; // Added Program type
-// Import the new data service function
-import { getFounders, getJobs, getSuccessStories, getPrograms } from '@/services/dataService'; 
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
+import { getFounders, getJobs, getSuccessStories, getPrograms, getMemberBenefits, getSponsorshipTiers } from '@/services/dataService';
 
 interface DataState {
   founders: Founder[];
   jobs: Job[];
   stories: SuccessStory[];
-  programs: Program[]; // Added programs to the state
+  programs: Program[];
+  memberBenefits: MemberBenefit[];
+  sponsorshipTiers: SponsorshipTier[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -16,22 +17,23 @@ const initialState: DataState = {
   founders: [],
   jobs: [],
   stories: [],
-  programs: [], // Initialize as an empty array
+  programs: [],
+  memberBenefits: [],
+  sponsorshipTiers: [],
   status: 'idle',
   error: null,
 };
 
-// Async Thunks
 export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
-  // Fetch all four data types in parallel
-  const [founders, jobs, stories, programs] = await Promise.all([
+  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers] = await Promise.all([
     getFounders(),
     getJobs(),
     getSuccessStories(),
-    getPrograms(), // Fetch the programs
+    getPrograms(),
+    getMemberBenefits(),
+    getSponsorshipTiers(),
   ]);
-  // Return all data in the payload
-  return { founders, jobs, stories, programs };
+  return { founders, jobs, stories, programs, memberBenefits, sponsorshipTiers };
 });
 
 const dataSlice = createSlice({
@@ -48,7 +50,9 @@ const dataSlice = createSlice({
         state.founders = action.payload.founders;
         state.jobs = action.payload.jobs;
         state.stories = action.payload.stories;
-        state.programs = action.payload.programs; // Store the fetched programs
+        state.programs = action.payload.programs;
+        state.memberBenefits = action.payload.memberBenefits;
+        state.sponsorshipTiers = action.payload.sponsorshipTiers;
       })
       .addCase(fetchAllData.rejected, (state, action) => {
         state.status = 'failed';

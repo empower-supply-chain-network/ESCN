@@ -5,13 +5,17 @@ import { useDispatch } from 'react-redux';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 
-// Page Components (Importing all destinations)
+// Page Components
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
 import ProgramsPage from './pages/ProgramsPage';
 import SuccessStoriesPage from './pages/SuccessStoriesPage';
 import JobsPage from './pages/JobsPage';
+// 1. Import the new page components
+import JoinPage from './pages/JoinPage';
+import SponsorshipPage from './pages/SponsorshipPage';
+
 
 // Modal Components and State Management
 import { BaseModal } from './components/modals/BaseModal';
@@ -32,6 +36,7 @@ function App() {
     switch (modalType) {
       case 'login':
         return <LoginModal />;
+      // The membership modal is no longer triggered by the main button, but we can leave it here for future use.
       case 'membership':
         return <MembershipModal />;
       default:
@@ -43,7 +48,6 @@ function App() {
     <div className="flex flex-col min-h-screen bg-white-linen text-text-primary">
       <Header />
       <main className="flex-grow">
-        {/* This is the main "map" that connects URLs to pages */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -51,6 +55,10 @@ function App() {
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/success-stories" element={<SuccessStoriesPage />} />
           <Route path="/jobs" element={<JobsPage />} />
+          
+          {/* 2. Add the new routes to the router */}
+          <Route path="/join" element={<JoinPage />} />
+          <Route path="/sponsorship" element={<SponsorshipPage />} />
         </Routes>
       </main>
       <Footer />

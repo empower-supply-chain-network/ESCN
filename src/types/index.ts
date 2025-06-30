@@ -40,6 +40,25 @@ export interface Program {
     description: string;
 }
 
+// NEW: Interface for a single member benefit
+export interface MemberBenefit {
+  id: string;
+  title: string;
+  description: string;
+  icon: string; // Emoji for visual flair
+}
+
+// NEW: Interface for a sponsorship package
+export interface SponsorshipTier {
+  id: string;
+  category: 'Educational Institution' | 'Internship Partner' | 'Certification Sponsor';
+  tier: string; // e.g., "Basic Tier", "Advanced"
+  title: string;
+  investment?: string; // Optional for some types
+  benefits: string[];
+}
+
+
 // UI Types
 export type ModalType = 'login' | 'membership' | 'event' | 'booking' | 'enroll' | null;
 

@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/Button';
 import { openModal } from '@/store/slices/uiSlice';
 import { cn } from '@/utils/cn';
 import { useAuth } from '@/hooks/useAuth';
+import logoImage from '@/assets/images/ESCN_Logo.png';
 
-// --- 1. IMPORT THE LOGO IMAGE ---
-import logoImage from '@/assets/images/ESCN_Logo.png'; 
-
+// 1. Add "Sponsorship" to the navLinks array
 const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/events', label: 'Events' },
   { href: '/programs', label: 'Programs' },
+  { href: '/sponsorship', label: 'Sponsorship' }, // NEW LINK
   { href: '/success-stories', label: 'Success Stories' },
   { href: '/jobs', label: 'Jobs' },
 ];
@@ -29,7 +29,6 @@ export function Header() {
     <header className="fixed top-0 z-50 w-full bg-white-linen shadow-sm border-b border-border-light">
       <nav className="container flex items-center justify-between max-w-6xl py-2 mx-auto px-4">
         <Link to="/" className="flex-shrink-0">
-          {/* --- 2. USE THE IMPORTED IMAGE VARIABLE --- */}
           <img src={logoImage} alt="ChainSpark Logo" className="block w-auto h-20" />
         </Link>
         
@@ -52,7 +51,13 @@ export function Header() {
            {isAuthenticated ? (
              <Button>Dashboard</Button>
            ) : (
-            <Button variant="outline" size="sm" onClick={handleLoginClick}>Login</Button>
+            <>
+              {/* 2. Changed the "Join Us" button to a NavLink that points to the /join page */}
+              <NavLink to="/join">
+                <Button variant="default" size="sm">Join Us</Button>
+              </NavLink>
+              <Button variant="outline" size="sm" onClick={handleLoginClick}>Login</Button>
+            </>
            )}
         </div>
         <div className="lg:hidden">
