@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { openModal } from '@/store/slices/uiSlice';
-
-// --- 1. IMPORT THE HERO IMAGE ---
 import heroImage from '@/assets/images/Homepage_Photo_3.png';
 
 const HomePage = () => {
@@ -12,7 +10,6 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    // --- 2. USE THE IMPORTED IMAGE VARIABLE ---
     <section className="relative flex items-center justify-center w-full min-h-screen pt-24 text-center bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="absolute inset-0 bg-black/40" />
       <div className="container relative z-10 max-w-4xl mx-auto">
@@ -31,17 +28,21 @@ const HomePage = () => {
           <p className="max-w-3xl mx-auto mt-6 text-lg text-white-linen" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
             Empowering the next generation of supply chain leaders through meaningful networking, innovative knowledge sharing, and collaborative growth.
           </p>
+          
+          {/* --- THIS IS THE CORRECTED SECTION --- */}
           <div className="flex flex-col items-center justify-center gap-4 mt-10 sm:flex-row">
             <motion.div
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
+              {/* This button correctly links to the Events page */}
               <Button size="lg" onClick={() => navigate('/events')}>
                 Upcoming Events
               </Button>
             </motion.div>
-            <Button size="lg" variant="secondary" onClick={() => dispatch(openModal('membership'))}>
-              Join Us
+            {/* The "Join Us" button is now a "Learn More" button linking to the About page */}
+            <Button size="lg" variant="secondary" onClick={() => navigate('/about')}>
+              Learn More
             </Button>
           </div>
         </motion.div>

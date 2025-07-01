@@ -1,14 +1,33 @@
-// In src/pages/JoinPage.tsx
-
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/store/store';
 import { useTypedSelector } from '@/hooks/useTypedSelector';
 import { fetchAllData } from '@/store/slices/dataSlice';
+import { MemberBenefit } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Loader from '@/components/shared/Loader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+
+// The component for the alternating benefit layout
+const BenefitSection: React.FC<{ benefit: MemberBenefit; index: number }> = ({ benefit, index }) => {
+  // Determine if the image should be on the right or left
+  const isImageRight = index % 2 === 0;
+
+  return (
+    <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${!isImageRight ? 'md:flex-row-reverse' : ''}`}>
+      {/* Text Content */}
+      <div className="md:w-1/2 text-center md:text-left">
+        <h3 className="text-3xl font-bold text-forest-green mb-4">{benefit.title}</h3>
+        <p className="text-lg text-text-secondary leading-relaxed">{benefit.description}</p>
+      </div>
+      {/* Image Content */}
+      <div className="md:w-1/2">
+        <img src={benefit.imageUrl} alt={benefit.title} className="rounded-lg shadow-lg w-full h-auto object-cover aspect-video" />
+      </div>
+    </div>
+  );
+};
 
 const JoinPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,29 +47,22 @@ const JoinPage: React.FC = () => {
           Become a part of a vibrant network dedicated to advancing the supply chain industry through collaboration, innovation, and empowerment.
         </p>
 
-        <div className="mt-12">
-          <h3 className="text-3xl font-bold text-center text-forest-green mb-8">Membership Benefits</h3>
+        {/* The main benefits layout section */}
+        <div className="mt-20 space-y-20">
           {status === 'loading' && <Loader />}
           {status === 'failed' && <p className="text-center text-red-500">Error: {error}</p>}
           {status === 'succeeded' && (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {memberBenefits.map((benefit) => (
-                <Card key={benefit.id} className="text-center p-4">
-                  <div className="text-5xl mb-4">{benefit.icon}</div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                  <CardContent className="pt-4">
-                    <p className="text-text-secondary">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            memberBenefits.map((benefit, index) => (
+              <BenefitSection key={benefit.id} benefit={benefit} index={index} />
+            ))
           )}
         </div>
 
-        <div className="mt-20">
-            <h3 className="text-3xl font-bold text-center text-forest-green mb-8">Choose Your Plan</h3>
-            <div className="grid gap-8 max-w-3xl mx-auto md:grid-cols-2">
-                <Card className="p-4">
+        {/* The pricing section remains unchanged */}
+        <div className="mt-28">
+            <SectionTitle>Choose Your Plan</SectionTitle>
+            <div className="grid gap-8 max-w-4xl mx-auto mt-12 md:grid-cols-2">
+                <Card className="p-6">
                     <CardHeader>
                         <CardTitle className="text-center text-2xl">Monthly</CardTitle>
                     </CardHeader>
@@ -65,7 +77,7 @@ const JoinPage: React.FC = () => {
                         <Button className="w-full mt-6">Choose Monthly</Button>
                     </CardContent>
                 </Card>
-                <Card className="p-4 border-2 border-emerald-green">
+                <Card className="p-6 border-2 border-emerald-green">
                     <CardHeader>
                         <CardTitle className="text-center text-2xl">Annual</CardTitle>
                     </CardHeader>

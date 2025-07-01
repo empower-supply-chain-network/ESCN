@@ -45,7 +45,8 @@ export interface MemberBenefit {
   id: string;
   title: string;
   description: string;
-  icon: string; // Emoji for visual flair
+  icon?: string; // CHANGED: Added '?' to make this property optional
+  imageUrl: string;
 }
 
 // NEW: Interface for a sponsorship package
