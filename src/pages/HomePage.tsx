@@ -1,12 +1,12 @@
-import { useDispatch } from 'react-redux';
+// REMOVED 'useDispatch' from this import
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
-import { openModal } from '@/store/slices/uiSlice';
+// REMOVED 'openModal' import
 import heroImage from '@/assets/images/Homepage_Photo_3.png';
 
 const HomePage = () => {
-  const dispatch = useDispatch();
+  // REMOVED the unused 'dispatch' variable
   const navigate = useNavigate();
 
   return (
@@ -28,19 +28,15 @@ const HomePage = () => {
           <p className="max-w-3xl mx-auto mt-6 text-lg text-white-linen" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
             Empowering the next generation of supply chain leaders through meaningful networking, innovative knowledge sharing, and collaborative growth.
           </p>
-          
-          {/* --- THIS IS THE CORRECTED SECTION --- */}
           <div className="flex flex-col items-center justify-center gap-4 mt-10 sm:flex-row">
             <motion.div
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              {/* This button correctly links to the Events page */}
               <Button size="lg" onClick={() => navigate('/events')}>
                 Upcoming Events
               </Button>
             </motion.div>
-            {/* The "Join Us" button is now a "Learn More" button linking to the About page */}
             <Button size="lg" variant="secondary" onClick={() => navigate('/about')}>
               Learn More
             </Button>
