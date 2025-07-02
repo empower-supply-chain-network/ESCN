@@ -4,12 +4,24 @@ import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } f
 import shuyaImage from '@/assets/images/Shuya.png';
 import michelleImage from '@/assets/images/Michelle.jpg';
 
-// Import all the new images for the benefits
+// --- Import all the new images for the benefits
 import networkingImage from '@/assets/images/Networking Events.jpeg';
 import knowledgeImage from '@/assets/images/Knowledge Sharing Platforms.jpg';
 import mentorshipImage from '@/assets/images/Mentorship Program.jpg';
 import inclusionImage from '@/assets/images/Diversity and Inclusion Initiatives.jpg';
 import supportImage from '@/assets/images/Professional Support Clinics.jpg';
+
+// ---  IMPORT ALL THE NEW EVENT IMAGES ---
+import eventMay2023_1 from '@/assets/images/event-may-2023-1.jpg';
+import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
+import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
+import eventFeb2023_1 from '@/assets/images/event-feb-2023-1.jpg';
+import eventFeb2023_2 from '@/assets/images/event-feb-2023-2.jpg';
+import eventFeb2023_3 from '@/assets/images/event-feb-2023-3.jpg';
+import eventAug2022_1 from '@/assets/images/event-aug-2022-1.jpg';
+import eventAug2022_2 from '@/assets/images/event-aug-2022-2.jpg';
+import eventAug2022_3 from '@/assets/images/event-aug-2022-3.jpg';
+
 
 
 export const mockFounders: Founder[] = [
@@ -101,4 +113,29 @@ export const mockSponsorshipTiers: SponsorshipTier[] = [
   // Certification Sponsor Tiers
   { id: 'cert1', category: 'Certification Sponsor', tier: 'Basic', title: 'Basic Certification Sponsor', investment: '10-15% discount on course enrollments', benefits: ['Exclusive promotional offers for members', 'Listed as a Certification Sponsor on website', 'Opportunity to promote programs at events', 'Feature in quarterly newsletter'] },
   { id: 'cert2', category: 'Certification Sponsor', tier: 'Advanced', title: 'Advanced Certification Sponsor', investment: '15-25% discount on course enrollments', benefits: ['Offer limited scholarships or reduced rates', 'Prominent listing as an Advanced Sponsor', 'Host a dedicated webinar for ChainSpark members', 'Collaborate on a customized marketing campaign'] },
+];
+
+// The newest event is first in the array.
+export const mockPastEvents: PastEvent[] = [
+  {
+    id: '3',
+    date: 'May, 2023',
+    title: 'Career Fair Moment Sharing',
+    description: 'Our inaugural career fair in June 2023 was a resounding success, with over 100 attendees. The event featured head-hunters and a diverse range of business owners showcasing job opportunities at their booths.',
+    imageUrls: [eventMay2023_1, eventMay2023_2, eventMay2023_3],
+  },
+  {
+    id: '2',
+    date: 'Feb, 2023',
+    title: 'Past Events Showcase',
+    description: 'Guests sharing about supply chain trends in 2023. We were also proud to officially join the CSCA as the QC chapter.',
+    imageUrls: [eventFeb2023_1, eventFeb2023_2, eventFeb2023_3],
+  },
+  {
+    id: '1',
+    date: 'Aug, 2022',
+    title: 'Past Events Showcase',
+    description: 'The establishment of the Montreal Supply Chain Mutual Aid Group - an informal of network and the beginning of our journey. We invited guests to share their success in the supply chain industry.',
+    imageUrls: [eventAug2022_1, eventAug2022_2, eventAug2022_3],
+  },
 ];

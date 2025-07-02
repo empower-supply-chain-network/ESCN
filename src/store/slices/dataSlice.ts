@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
 import { getFounders, getJobs, getSuccessStories, getPrograms, getMemberBenefits, getSponsorshipTiers } from '@/services/dataService';
+import { PastEvent } from '@/types'; // Add new type
+import { getPastEvents } from '@/services/dataService'; // Add new service function
+
 
 interface DataState {
   founders: Founder[];
@@ -9,6 +12,7 @@ interface DataState {
   programs: Program[];
   memberBenefits: MemberBenefit[];
   sponsorshipTiers: SponsorshipTier[];
+  pastEvents: PastEvent[]; // NEW
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -20,20 +24,22 @@ const initialState: DataState = {
   programs: [],
   memberBenefits: [],
   sponsorshipTiers: [],
+  pastEvents: [], // NEW
   status: 'idle',
   error: null,
 };
 
 export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
-  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers] = await Promise.all([
+  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents] = await Promise.all([
     getFounders(),
     getJobs(),
     getSuccessStories(),
     getPrograms(),
     getMemberBenefits(),
     getSponsorshipTiers(),
+    getPastEvents(), // NEW
   ]);
-  return { founders, jobs, stories, programs, memberBenefits, sponsorshipTiers };
+  return { founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents };
 });
 
 const dataSlice = createSlice({
@@ -53,6 +59,7 @@ const dataSlice = createSlice({
         state.programs = action.payload.programs;
         state.memberBenefits = action.payload.memberBenefits;
         state.sponsorshipTiers = action.payload.sponsorshipTiers;
+        state.pastEvents = action.payload.pastEvents; // NEW
       })
       .addCase(fetchAllData.rejected, (state, action) => {
         state.status = 'failed';

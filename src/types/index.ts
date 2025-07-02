@@ -79,3 +79,11 @@ export interface AuthState extends LoadingState {
   user: User | null;
   isAuthenticated: boolean;
 }
+
+export interface PastEvent {
+  id: string;
+  date: string; // e.g., "Aug, 2022"
+  title: string;
+  description: string;
+  imageUrls: string[]; // An array of image paths
+}

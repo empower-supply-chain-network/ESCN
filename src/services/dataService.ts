@@ -5,6 +5,8 @@ import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } f
 // Import the new mock data arrays
 import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers } from '@/data/mockData';
 
+import { mockPastEvents } from '@/data/mockData'; // Add new import
+
 const simulateNetworkDelay = <T>(data: T): Promise<T> => {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -36,4 +38,8 @@ export const getMemberBenefits = (): Promise<MemberBenefit[]> => {
 
 export const getSponsorshipTiers = (): Promise<SponsorshipTier[]> => {
   return simulateNetworkDelay(mockSponsorshipTiers);
+};
+
+export const getPastEvents = (): Promise<PastEvent[]> => {
+  return simulateNetworkDelay(mockPastEvents);
 };
