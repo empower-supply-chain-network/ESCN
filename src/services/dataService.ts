@@ -1,7 +1,7 @@
 // MOCK DATA SERVICE
 // This simulates fetching data from a Firestore database.
 
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
 // Import the new mock data arrays
 import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers } from '@/data/mockData';
 

@@ -1,4 +1,4 @@
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
 
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
