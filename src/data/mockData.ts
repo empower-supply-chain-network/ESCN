@@ -91,7 +91,7 @@ export const mockMemberBenefits: MemberBenefit[] = [
   { id: '2', title: 'Knowledge Sharing Platforms', description: 'Access to exclusive webinars and workshops hosted by industry leaders and subject matter experts.', imageUrl: knowledgeImage },
   { id: '3', title: 'Mentorship Program', description: 'Match with experienced supply chain professionals for guidance and career development opportunities.', imageUrl: mentorshipImage },
   { id: '4', title: 'Diversity and Inclusion Initiatives', description: 'Participate in inclusive leadership programs to create diverse and welcoming work environments.', imageUrl: inclusionImage },
-  { id:á¸µ id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', imageUrl: supportImage },
+  { id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', imageUrl: supportImage },
 ];
 
 export const mockSponsorshipTiers: SponsorshipTier[] = [

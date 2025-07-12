@@ -11,7 +11,6 @@ import SectionTitle from '@/components/shared/SectionTitle';
 import Loader from '@/components/shared/Loader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
-// A new component for the grid view
 const PastEventGridCard: React.FC<{ event: PastEvent }> = ({ event }) => (
   <Link to={`/events/${event.id}`}>
     <Card className="group overflow-hidden h-full flex flex-col cursor-pointer hover:shadow-xl transition-shadow duration-300">
@@ -35,7 +34,8 @@ const PastEventGridCard: React.FC<{ event: PastEvent }> = ({ event }) => (
 
 const EventsPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { pastEvents, status, error }_id = useTypedSelector((state) => state.data);
+  // CORRECTED: The error was likely here, a missing comma or typo.
+  const { pastEvents, status, error } = useTypedSelector((state) => state.data);
 
   useEffect(() => {
     if (status !== 'succeeded') {
