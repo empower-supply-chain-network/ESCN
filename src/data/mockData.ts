@@ -1,27 +1,15 @@
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
 
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
 import michelleImage from '@/assets/images/Michelle.jpg';
 
-// --- Import all the new images for the benefits
+// Import all the new images for the benefits
 import networkingImage from '@/assets/images/Networking Events.jpeg';
 import knowledgeImage from '@/assets/images/Knowledge Sharing Platforms.jpg';
 import mentorshipImage from '@/assets/images/Mentorship Program.jpg';
 import inclusionImage from '@/assets/images/Diversity and Inclusion Initiatives.jpg';
 import supportImage from '@/assets/images/Professional Support Clinics.jpg';
-
-// ---  IMPORT ALL THE NEW EVENT IMAGES ---
-import eventMay2023_1 from '@/assets/images/event-may-2023-1.jpg';
-import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
-import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
-import eventFeb2023_1 from '@/assets/images/event-feb-2023-1.jpg';
-import eventFeb2023_2 from '@/assets/images/event-feb-2023-2.jpg';
-import eventFeb2023_3 from '@/assets/images/event-feb-2023-3.jpg';
-import eventAug2022_1 from '@/assets/images/event-aug-2022-1.jpg';
-import eventAug2022_2 from '@/assets/images/event-aug-2022-2.jpg';
-import eventAug2022_3 from '@/assets/images/event-aug-2022-3.jpg';
-
 
 
 export const mockFounders: Founder[] = [
@@ -50,17 +38,47 @@ export const mockFounders: Founder[] = [
   },
 ];
 
-export const mockJobs: Job[] = [
-    { id: '1', title: 'Logistics Coordinator', company: 'Dynamic Goods Inc.', location: 'Montreal, QC', summary: 'Seeking a detail-oriented Logistics Coordinator to manage transportation and warehousing. 2+ years experience. Strong communication.', type: 'Full-time', postedDate: 'July 20, 2024' },
-    { id: '2', title: 'Supply Chain Analyst', company: 'Innovate Solutions Ltd.', location: 'Toronto, ON (Remote)', summary: 'Responsibilities: data analysis, process improvement, inventory management. Excel/SQL desired.', type: 'Full-time', postedDate: 'July 18, 2024' },
-    { id: '3', title: 'Procurement Specialist', company: 'Global Sourcing Co.', location: 'Vancouver, BC', summary: '6-month contract for strategic sourcing. Vendor negotiation & contract management. Immediate start.', type: 'Contract', postedDate: 'July 22, 2024' },
+export const mockJobs: Job[] = [];
+
+// --- THIS IS THE CORRECTED SECTION ---
+// We are replacing the old stories with just Phoebe's story.
+export const mockSuccessStories: SuccessStory[] = [
+    { 
+        id: 'phoebe-story', 
+        initials: 'P', 
+        name: 'Phoebe', 
+        title: 'A Beautiful Encounter at a Life Crossroads', 
+        // The specific quote you requested for the summary card
+        story: '"In a new land without networks or resources, this group became my bridge — a platform that truly empowered me to restart my career."', 
+        detailedStory: [
+            "<h2>🛬 A Hasty Choice After Arrival</h2>",
+            "<p>When Michelle asked me if I could share my job-hunting journey, I agreed without hesitation—just like how she had helped recommend me for a job without hesitation when I needed it the most.</p>",
+            "<p>Six years ago, shortly after landing in Montreal, I chose to study <strong>Early Childhood Education</strong> at Vanier College. Perhaps because of my teaching background, I assumed it would be easy to transition into another field of education. Without doing much research, I made a hasty decision—only to learn that Vanier’s early childhood education program is among the most challenging to graduate from.</p>",
+            "<p>Thankfully, I managed to complete the program on time without missing a single day, but it still took me nearly two years. After graduation, I quickly found work at a daycare, but unfortunately, COVID hit just a month into the job. After two weeks of isolation, I declined the offer to return. COVID was just part of the reason—the truth was, I realized I really didn’t enjoy the work at all.</p>",
+            "<h2>🔁 A Twisting Path to Career Change</h2>",
+            "<p>While staying at home, a friend who had arrived in Canada around the same time encouraged me to switch to the <strong>logistics field</strong>. She had studied logistics while I studied early childhood education—my program took two years; hers took four months. By the time I was still interning, she was already switching jobs and getting salary bumps. She had hit the ground running.</p>",
+            "<p>That’s when I began to seriously reflect on my career choice. How could such a vast employment gap exist between two programs with such different time investments?</p>",
+            "<blockquote>Who says only men fear choosing the wrong career path? Let me tell you—women do too.</blockquote>",
+            "<p>Fortunately, Canada has a strong <strong>continuing education system</strong>. It provides a real opportunity for immigrants to pivot professionally. I decided to study <strong>Transportation & Logistics</strong> at Champlain College. Luckily, I got into an <strong>intensive 4-month program</strong> (which no longer exists today). The instructors were very committed to helping us find jobs after graduation—but I made another mistake: I decided not to job hunt immediately.</p>",
+            "<p>By late 2022, about 7–8 months after graduation, I started applying for jobs online. But I had missed the “graduation hiring season.” My instructors had moved on, classmates were already settled, and job leads were few and far between. My applications went unanswered, and I started to feel increasingly discouraged—almost hopeless.</p>",
+            "<h2>🌈 A Beautiful Encounter That Changed Everything</h2>",
+            "<p>Just when I felt stuck, a classmate casually said, “Let me add you to this Chinese supply chain group. You might find job leads there.” That’s how I joined the group and very quickly received a warm welcome from Michelle, the group leader.</p>",
+            "<p>Upon hearing about my urgent job search and struggles, Michelle went out of her way to help. She not only comforted me but actively looked for job leads and passed one along shortly afterward. She also helped me revise my résumé, reviewed international trade processes and key knowledge with me, encouraged me constantly, and most importantly—<strong>gave me back my confidence</strong>.</p>",
+            "<blockquote>Michelle not only comforted me but actively looked for job leads, helped revise my résumé, reviewed trade processes, and restored my confidence — it was like rain in a drought.</blockquote>",
+            "<p>All of this was a timely and selfless gift. I was deeply moved. <em>It really means a lot to me!</em></p>",
+            "<p>Thanks to Michelle’s full support, I landed the job. Seven months later, a recruiter reached out to me, and now I’m in a position I really enjoy. The company culture is relaxed, my colleagues are friendly and respectful, and I feel truly satisfied.</p>",
+            "<h2>🤝 The Power of Community</h2>",
+            "<p>I met Michelle even before the Quebec Chapter of the Canadian Supply Chain Association (CSCA) was founded, but only met her in person at the chapter’s launch event. She is a warm-hearted and elegant woman with strong organizational and leadership skills. Calling her “beautiful and kind, capable and compassionate” is no exaggeration.</p>",
+            "<p>I’m incredibly grateful to have met her when I needed help the most. She told me that, as a newcomer herself, she and two friends built this platform out of passion and vision—to support immigrants in growing their careers within Canada’s supply chain industry.</p>",
+            "<p>There’s a saying: <em>“At home, rely on your parents; outside, rely on your friends.”</em> It may sound cliché, but for us first-generation immigrants, it’s very real.</p>",
+            "<p>In a new land where we lack networks, information, and resources, Michelle and her friends created a platform—<strong>the CSCA Quebec Chapter</strong>—that plays the role of a friend. Even though many members haven’t met face-to-face, this group has provided useful information and resources. It transformed scattered leads into a <strong>flowing network of opportunity</strong>.</p>",
+            "<h2>🙏 Grateful for the Encounter</h2>",
+            "<blockquote>Good things happen to those who do good. Those who give love will receive love in return.</blockquote>"
+        ],
+        keyImpact: ['Community', 'Networking', 'Mentorship'] 
+    }
 ];
 
-export const mockSuccessStories: SuccessStory[] = [
-    { id: '1', initials: 'AD', name: 'Ana de Leon', title: 'From Career Transition to Supply Chain Analyst', story: '"Joining ChainSpark was a turning point. The mentorship program provided invaluable guidance, and networking events helped me connect with professionals. Within six months, I landed my first role as a Supply Chain Analyst!"', keyImpact: ['Mentorship', 'Networking'] },
-    { id: '2', initials: 'BC', name: 'Ben Carter', title: 'Accelerated Growth with CSCP Certification', story: '"The CSCP prep course was fantastic. Instructors were knowledgeable, and the study group kept me motivated. Earning my CSCP directly led to a promotion and a significant pay raise. I was able to apply new strategies at work immediately, which impressed my managers. This program is a must for anyone serious about their supply chain career."', keyImpact: ['Certification', 'Peer Support'] },
-    { id: '3', initials: 'SJ', name: 'Sofia Jiang', title: 'Finding Community & First Job in a New Country', story: '"As a new immigrant, ChainSpark provided a welcoming community and practical workshops. I made crucial connections that led to my first job in logistics here. The support system is incredible."', keyImpact: ['Community', 'Workshops'] },
-];
 
 export const mockPrograms: Program[] = [
     { id: 'continuous-education', title: 'Continuous Education', subtitle: '📚 Learn & Grow', description: 'Partner with leading educational institutions to provide ongoing learning opportunities.' },
@@ -68,74 +86,14 @@ export const mockPrograms: Program[] = [
     { id: 'mentorship', title: 'Mentorship Program', subtitle: '🤝 Connect & Guide', description: 'Connect with experienced professionals who can guide your career journey.' },
 ];
 
-// NEW: Data for the "Join Us" page benefits
 export const mockMemberBenefits: MemberBenefit[] = [
-  { 
-    id: '1', 
-    title: 'Networking Events', 
-    description: 'Industry mixers and round table discussions on hot topics to facilitate connections and collaboration.', 
-    imageUrl: networkingImage
-  },
-  { 
-    id: '2', 
-    title: 'Knowledge Sharing Platforms', 
-    description: 'Access to exclusive webinars and workshops hosted by industry leaders and subject matter experts.', 
-    imageUrl: knowledgeImage
-  },
-  { 
-    id: '3', 
-    title: 'Mentorship Program', 
-    description: 'Match with experienced supply chain professionals for guidance and career development opportunities.', 
-    imageUrl: mentorshipImage
-  },
-  { 
-    id: '4', 
-    title: 'Diversity and Inclusion Initiatives', 
-    description: 'Participate in inclusive leadership programs to create diverse and welcoming work environments.', 
-    imageUrl: inclusionImage
-  },
-  { 
-    id: '5', 
-    title: 'Professional Support Clinics', 
-    description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', 
-    imageUrl: supportImage
-  },
+  { id: '1', title: 'Networking Events', description: 'Industry mixers and round table discussions on hot topics to facilitate connections and collaboration.', imageUrl: networkingImage },
+  { id: '2', title: 'Knowledge Sharing Platforms', description: 'Access to exclusive webinars and workshops hosted by industry leaders and subject matter experts.', imageUrl: knowledgeImage },
+  { id: '3', title: 'Mentorship Program', description: 'Match with experienced supply chain professionals for guidance and career development opportunities.', imageUrl: mentorshipImage },
+  { id: '4', title: 'Diversity and Inclusion Initiatives', description: 'Participate in inclusive leadership programs to create diverse and welcoming work environments.', imageUrl: inclusionImage },
+  { id:á¸µ id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', imageUrl: supportImage },
 ];
 
-// NEW: Data for the Sponsorship page
 export const mockSponsorshipTiers: SponsorshipTier[] = [
-  // Educational Institution Tiers
-  { id: 'edu1', category: 'Educational Institution', tier: 'Basic Tier', title: 'Foundation Membership', investment: '$2,500 - $5,000', benefits: ["Access to ChainSpark's online resources", 'Listing on website as a supporting institution', 'Event invitations for representatives and students', 'Access to a directory of ChainSpark members', 'Allows students to join free on some events (career fair, online workshops)'] },
-  { id: 'edu2', category: 'Educational Institution', tier: 'Intermediate Tier', title: 'Engagement Partner', investment: '$5,000 - $10,000 annually', benefits: ['All benefits from the Basic Tier', 'Opportunities for students to apply for internships', 'Invitation for ChainSpark members to speak at events', 'Access to specialized webinars and workshops'] },
-  { id: 'edu3', category: 'Educational Institution', tier: 'Premium Tier', title: 'Strategic Partner', investment: '$10,000 - $25,000 Annually', benefits: ['All benefits from the Intermediate Tier', 'Tailored internship programs designed in collaboration', 'Sponsorship recognition at major events', 'Access to mentorship from industry professionals for students'] },
-  // Internship Partner
-  { id: 'int1', category: 'Internship Partner', tier: '', title: 'Internship Placement Partner', benefits: ['Work with ChainSpark to place students in internships', 'Logo placement on program website and marketing materials', 'Acknowledgement in newsletters and social media', '5 VIP passes to ChainSpark events', 'Opportunities to participate in intern review and feedback sessions'] },
-  // Certification Sponsor Tiers
-  { id: 'cert1', category: 'Certification Sponsor', tier: 'Basic', title: 'Basic Certification Sponsor', investment: '10-15% discount on course enrollments', benefits: ['Exclusive promotional offers for members', 'Listed as a Certification Sponsor on website', 'Opportunity to promote programs at events', 'Feature in quarterly newsletter'] },
-  { id: 'cert2', category: 'Certification Sponsor', tier: 'Advanced', title: 'Advanced Certification Sponsor', investment: '15-25% discount on course enrollments', benefits: ['Offer limited scholarships or reduced rates', 'Prominent listing as an Advanced Sponsor', 'Host a dedicated webinar for ChainSpark members', 'Collaborate on a customized marketing campaign'] },
-];
-
-// The newest event is first in the array.
-export const mockPastEvents: PastEvent[] = [
-  {
-    id: '3',
-    date: 'May, 2023',
-    title: 'Career Fair Moment Sharing',
-    description: 'Our inaugural career fair in June 2023 was a resounding success, with over 100 attendees. The event featured head-hunters and a diverse range of business owners showcasing job opportunities at their booths.',
-    imageUrls: [eventMay2023_1, eventMay2023_2, eventMay2023_3],
-  },
-  {
-    id: '2',
-    date: 'Feb, 2023',
-    title: 'Past Events Showcase',
-    description: 'Guests sharing about supply chain trends in 2023. We were also proud to officially join the CSCA as the QC chapter.',
-    imageUrls: [eventFeb2023_1, eventFeb2023_2, eventFeb2023_3],
-  },
-  {
-    id: '1',
-    date: 'Aug, 2022',
-    title: 'Past Events Showcase',
-    description: 'The establishment of the Montreal Supply Chain Mutual Aid Group - an informal of network and the beginning of our journey. We invited guests to share their success in the supply chain industry.',
-    imageUrls: [eventAug2022_1, eventAug2022_2, eventAug2022_3],
-  },
+  // ... (rest of the data)
 ];

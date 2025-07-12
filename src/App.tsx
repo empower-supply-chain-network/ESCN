@@ -15,6 +15,8 @@ import JobsPage from './pages/JobsPage';
 // 1. Import the new page components
 import JoinPage from './pages/JoinPage';
 import SponsorshipPage from './pages/SponsorshipPage';
+import EventDetailPage from './pages/EventDetailPage';
+import StoryDetailPage from './pages/StoryDetailPage';
 
 
 // Modal Components and State Management
@@ -59,6 +61,8 @@ function App() {
           {/* 2. Add the new routes to the router */}
           <Route path="/join" element={<JoinPage />} />
           <Route path="/sponsorship" element={<SponsorshipPage />} />
+          <Route path="/events/:eventId" element={<EventDetailPage />} />
+          <Route path="/success-stories/:storyId" element={<StoryDetailPage />} />
         </Routes>
       </main>
       <Footer />

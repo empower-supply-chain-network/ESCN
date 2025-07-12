@@ -87,3 +87,25 @@ export interface PastEvent {
   description: string;
   imageUrls: string[]; // An array of image paths
 }
+
+export interface PastEvent {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  // Add a new property for the main grid view
+  coverImageUrl: string; 
+  imageUrls: string[];
+  // Add a detailed description with HTML support
+  detailedDescription: string[]; 
+}
+
+export interface SuccessStory {
+  id: string;
+  initials: string;
+  name: string;
+  title: string;
+  story: string; // The short summary
+  detailedStory: string[]; // The full story paragraphs
+  keyImpact: string[];
+}
