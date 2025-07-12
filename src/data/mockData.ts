@@ -1,4 +1,4 @@
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
 
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
@@ -10,6 +10,17 @@ import knowledgeImage from '@/assets/images/Knowledge Sharing Platforms.jpg';
 import mentorshipImage from '@/assets/images/Mentorship Program.jpg';
 import inclusionImage from '@/assets/images/Diversity and Inclusion Initiatives.jpg';
 import supportImage from '@/assets/images/Professional Support Clinics.jpg';
+
+import eventAug2022_1 from '@/assets/images/event-aug-2022-1.jpg';
+import eventAug2022_2 from '@/assets/images/event-aug-2022-2.jpg';
+import eventAug2022_3 from '@/assets/images/event-aug-2022-3.jpg';
+import eventFeb2023_1 from '@/assets/images/event-feb-2023-1.jpg';
+import eventFeb2023_2 from '@/assets/images/event-feb-2023-2.jpg';
+import eventFeb2023_3 from '@/assets/images/event-feb-2023-3.jpg';
+import eventFeb2023_4 from '@/assets/images/event-feb-2023-4.jpg'; // New one
+import eventMay2023_1 from '@/assets/images/event-may-2023-1.jpg';
+import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
+import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
 
 
 export const mockFounders: Founder[] = [
@@ -96,4 +107,49 @@ export const mockMemberBenefits: MemberBenefit[] = [
 
 export const mockSponsorshipTiers: SponsorshipTier[] = [
   // ... (rest of the data)
+];
+
+export const mockPastEvents: PastEvent[] = [
+  {
+    id: '3',
+    date: 'May, 2023',
+    title: 'Inaugural Supply Chain Career Fair',
+    description: 'Our first-ever career fair was a resounding success, connecting job seekers with recruiters and business owners.', // Short description for the grid
+    coverImageUrl: eventMay2023_3, // As requested
+    imageUrls: [eventMay2023_1, eventMay2023_2, eventMay2023_3],
+    detailedDescription: [
+        "In June 2023, we proudly hosted our <strong>first-ever Supply Chain Career Fair</strong>—an unforgettable event that brought together <strong>job seekers, recruiters, and business owners</strong> under one roof. With over <strong>100 attendees</strong>, it marked a significant step forward in our community impact.",
+        "The venue was buzzing with energy as <strong>hiring managers and headhunters</strong> interacted directly with participants. Attendees explored <strong>job opportunities</strong> in logistics, manufacturing, procurement, and tech through engaging booths and one-on-one chats.",
+        "What made the fair truly special was its <strong>community-centered approach</strong>. Many businesses were immigrant-led and sought to <strong>recruit diverse talent</strong> reflective of modern Canada. We also provided <strong>live résumé reviews, coaching, and casual coffee chats</strong> to boost participants’ confidence and readiness.",
+        "The success of this career fair demonstrated the power of <strong>grassroots action</strong> in connecting talent to meaningful careers. It validated our long-standing belief in the importance of inclusive, immigrant-led solutions in Canada’s supply chain future."
+    ]
+  },
+  {
+    id: '2',
+    date: 'Feb, 2023',
+    title: 'Becoming Quebec Chapter of CSCA',
+    description: 'We celebrated joining the Canadian Supply Chain Association (CSCA) as its official Quebec Chapter.',
+    coverImageUrl: eventFeb2023_3, // As requested
+    imageUrls: [eventFeb2023_4, eventFeb2023_2, eventFeb2023_3,eventFeb2023_1],
+    detailedDescription: [
+        "By February 2023, our group reached a pivotal moment: we officially joined the <strong>Canadian Chinese Supply Chain Association (CSCA)</strong> as its <strong>Quebec Chapter</strong>. This milestone signified our evolution from a grassroots community to a recognized regional player within the national supply chain ecosystem.",
+        "To commemorate this partnership, we hosted an industry seminar featuring <strong>renowned professionals and thought leaders</strong>. Their talks explored the <strong>future of the supply chain in 2023</strong>, including the role of <strong>Artificial Intelligence</strong>, <strong>automation in warehousing</strong>, and <strong>procurement innovation</strong>.",
+        "Speakers highlighted real-world applications and shared case studies that demonstrated how companies are evolving in the face of disruption. The session attracted both newcomers and seasoned professionals seeking to <strong>stay competitive and informed</strong>.",
+        "This event reinforced our commitment to <strong>collaboration, bilingual inclusion, and diverse representation</strong> in Canadian supply chain leadership."
+    ]
+  },
+  {
+    id: '1',
+    date: 'Aug, 2022',
+    title: 'Founding of the Mutual Aid Group',
+    description: 'The very first gathering of what would become the Montreal Supply Chain Mutual Aid Group.',
+    coverImageUrl: eventAug2022_1, // As requested
+    imageUrls: [eventAug2022_1, eventAug2022_3, eventAug2022_2],
+    detailedDescription: [
+        "In August 2022, we proudly hosted the <strong>very first gathering</strong> of what would later become the Montreal Supply Chain Mutual Aid Group. The event took place in a cozy community space in downtown Montreal, welcoming <strong>newcomers, industry professionals, and curious learners</strong> alike.",
+        "The event was more than just a meetup—it was a <strong>foundational moment</strong> for a grassroots initiative created by and for immigrants navigating the Canadian job market. Several <strong>inspirational guest speakers</strong>, many of whom had successfully restarted their careers in Canada, shared heartfelt stories of resilience, adaptation, and growth in the Canadian supply chain sector.",
+        "We also held a panel on <strong>current supply chain industry trends</strong>, touching on post-COVID recovery, supply chain digitization, and regional hiring demands. The conversations sparked <strong>peer-to-peer connections</strong> and planted the seeds for a long-term support ecosystem.",
+        "This informal launch was driven by a shared vision: to <strong>build a trusted support network</strong> that empowers newcomers with professional insights, local resources, and industry access."
+    ]
+  },
 ];
