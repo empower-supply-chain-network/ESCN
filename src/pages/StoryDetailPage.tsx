@@ -34,19 +34,36 @@ const StoryDetailPage: React.FC = () => {
           Back to All Success Stories
         </Link>
         
-        <div className="text-center mb-10">
-            <div className="mx-auto flex items-center justify-center w-20 h-20 mb-4 text-3xl font-bold text-white rounded-full bg-emerald-green">
-                {story.initials}
-            </div>
+        <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-forest-green">{story.title}</h1>
-            <p className="text-xl font-semibold text-text-primary mt-2">{story.name}</p>
+            <p className="text-xl font-semibold text-text-primary mt-2">By {story.name}</p>
         </div>
 
-        {/* This section now correctly renders HTML content */}
+        {/*
+          This is the updated section with custom styling for better readability.
+          We are using a special <style> tag with JSX to apply these overrides.
+        */}
         <div className="prose lg:prose-lg max-w-none mx-auto text-text-secondary">
-            {story.detailedStory.map((paragraph, index) => (
-                <div key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-            ))}
+          <style>
+            {`
+              .prose h2 {
+                font-size: 1.5rem; /* Larger heading size */
+                font-weight: 700; /* Bold heading */
+                margin-top: 2.5rem; /* More space above headings */
+                margin-bottom: 1.25rem; /* More space below headings */
+              }
+              .prose p {
+                margin-bottom: 1.25rem; /* More space between paragraphs */
+              }
+              .prose blockquote {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+              }
+            `}
+          </style>
+          {story.detailedStory.map((paragraph, index) => (
+              <div key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+          ))}
         </div>
 
         <div className="mt-12 text-center">
