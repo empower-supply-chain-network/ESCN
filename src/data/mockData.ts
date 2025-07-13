@@ -79,10 +79,10 @@ export const mockSuccessStories: SuccessStory[] = [
             "<p>All of this was a timely and selfless gift. I was deeply moved. <em>It really means a lot to me!</em></p>",
             "<p>Thanks to Michelle’s full support, I landed the job. Seven months later, a recruiter reached out to me, and now I’m in a position I really enjoy. The company culture is relaxed, my colleagues are friendly and respectful, and I feel truly satisfied.</p>",
             "<h2>🤝 The Power of Community</h2>",
-            "<p>I met Michelle even before the Quebec Chapter of the Canadian Supply Chain Association (CSCA) was founded, but only met her in person at the chapter’s launch event. She is a warm-hearted and elegant woman with strong organizational and leadership skills. Calling her “beautiful and kind, capable and compassionate” is no exaggeration.</p>",
+            "<p>I met Michelle in person at one of the events, she is a warm-hearted and elegant woman with strong organizational and leadership skills. Calling her “beautiful and kind, capable and compassionate” is no exaggeration.</p>",
             "<p>I’m incredibly grateful to have met her when I needed help the most. She told me that, as a newcomer herself, she and two friends built this platform out of passion and vision—to support immigrants in growing their careers within Canada’s supply chain industry.</p>",
             "<p>There’s a saying: <em>“At home, rely on your parents; outside, rely on your friends.”</em> It may sound cliché, but for us first-generation immigrants, it’s very real.</p>",
-            "<p>In a new land where we lack networks, information, and resources, Michelle and her friends created a platform—<strong>the CSCA Quebec Chapter</strong>—that plays the role of a friend. Even though many members haven’t met face-to-face, this group has provided useful information and resources. It transformed scattered leads into a <strong>flowing network of opportunity</strong>.</p>",
+            "<p>In a new land where we lack networks, information, and resources, this platform plays the role of a friend. Even though many members haven’t met face-to-face, this group has provided useful information and resources. It transformed scattered leads into a <strong>flowing network of opportunity</strong>.</p>",
             "<h2>🙏 Grateful for the Encounter</h2>",
             "<blockquote>Good things happen to those who do good. Those who give love will receive love in return.</blockquote>"
         ],
