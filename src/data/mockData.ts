@@ -14,6 +14,7 @@ import supportImage from '@/assets/images/Professional Support Clinics.jpg';
 import eventAug2022_1 from '@/assets/images/event-aug-2022-1.jpg';
 import eventAug2022_2 from '@/assets/images/event-aug-2022-2.jpg';
 import eventAug2022_3 from '@/assets/images/event-aug-2022-3.jpg';
+import eventAug2022_4 from '@/assets/images/event-aug-2022-4.jpg';
 import eventFeb2023_1 from '@/assets/images/event-feb-2023-1.jpg';
 import eventFeb2023_2 from '@/assets/images/event-feb-2023-2.jpg';
 import eventFeb2023_3 from '@/assets/images/event-feb-2023-3.jpg';
@@ -21,6 +22,7 @@ import eventFeb2023_4 from '@/assets/images/event-feb-2023-4.jpg'; // New one
 import eventMay2023_1 from '@/assets/images/event-may-2023-1.jpg';
 import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
 import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
+import eventMay2023_4 from '@/assets/images/event-may-2023-4.jpg';
 
 
 export const mockFounders: Founder[] = [
@@ -116,7 +118,7 @@ export const mockPastEvents: PastEvent[] = [
     title: 'Inaugural Supply Chain Career Fair',
     description: 'Our first-ever career fair was a resounding success, connecting job seekers with recruiters and business owners.', // Short description for the grid
     coverImageUrl: eventMay2023_3, // As requested
-    imageUrls: [eventMay2023_1, eventMay2023_2, eventMay2023_3],
+    imageUrls: [eventMay2023_1, eventMay2023_2, eventMay2023_3,eventMay2023_4],
     detailedDescription: [
         "In June 2023, we proudly hosted our <strong>first-ever Supply Chain Career Fair</strong>—an unforgettable event that brought together <strong>job seekers, recruiters, and business owners</strong> under one roof. With over <strong>100 attendees</strong>, it marked a significant step forward in our community impact.",
         "The venue was buzzing with energy as <strong>hiring managers and headhunters</strong> interacted directly with participants. Attendees explored <strong>job opportunities</strong> in logistics, manufacturing, procurement, and tech through engaging booths and one-on-one chats.",
@@ -144,7 +146,7 @@ export const mockPastEvents: PastEvent[] = [
     title: 'Founding of the Mutual Aid Group',
     description: 'The very first gathering of what would become the Montreal Supply Chain Mutual Aid Group.',
     coverImageUrl: eventAug2022_1, // As requested
-    imageUrls: [eventAug2022_1, eventAug2022_3, eventAug2022_2],
+    imageUrls: [eventAug2022_1, eventAug2022_3, eventAug2022_2,eventAug2022_4],
     detailedDescription: [
         "In August 2022, we proudly hosted the <strong>very first gathering</strong> of what would later become the Montreal Supply Chain Mutual Aid Group. The event took place in a cozy community space in downtown Montreal, welcoming <strong>newcomers, industry professionals, and curious learners</strong> alike.",
         "The event was more than just a meetup—it was a <strong>foundational moment</strong> for a grassroots initiative created by and for immigrants navigating the Canadian job market. Several <strong>inspirational guest speakers</strong>, many of whom had successfully restarted their careers in Canada, shared heartfelt stories of resilience, adaptation, and growth in the Canadian supply chain sector.",
