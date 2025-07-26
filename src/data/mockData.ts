@@ -1,4 +1,4 @@
-import { Users, Handshake, Sparkles, Megaphone, CheckCircle, HandCoins } from 'lucide-react';
+import { Users, Handshake, Sparkles, Megaphone } from 'lucide-react';
 import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
