@@ -24,7 +24,7 @@ import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
 import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
 import eventMay2023_4 from '@/assets/images/event-may-2023-4.jpg';
 import sponsorshipHeroImage from '@/assets/images/sponsorship-hero.jpg';
-import placeholderLogo from '@/assets/images/placeholder-logo.png'; // Create a simple placeholder logo if you like
+// Create a simple placeholder logo if you like
 
 
 export const mockFounders: Founder[] = [
@@ -127,14 +127,7 @@ export const mockSponsorshipBenefits: SponsorshipBenefit[] = [
   { id: '4', title: 'Networking & Speaking', description: 'Position your team as thought leaders in the industry.' },
 ];
 
-export const mockPartners: Partner[] = [
-  { id: '1', name: 'Partner One', logoUrl: placeholderLogo },
-  { id: '2', name: 'Partner Two', logoUrl: placeholderLogo },
-  { id: '3', name: 'Partner Three', logoUrl: placeholderLogo },
-  { id: '4', name: 'Partner Four', logoUrl: placeholderLogo },
-  { id: '5', name: 'Partner Five', logoUrl: placeholderLogo },
-  { id: '6', name: 'Partner Six', logoUrl: placeholderLogo },
-];
+export const mockPartners: Partner[] = []; 
 
 export { sponsorshipHeroImage };
 
