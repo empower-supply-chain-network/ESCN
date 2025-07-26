@@ -17,6 +17,8 @@ export default {
         'text-on-medium': '#FFFFFF', // text-on-medium-bg
         'border-light': '#E0E0E0',
         'border-medium': '#C0C0C0',
+        'hero-text-green': '#006442',
+        'in-kind-card-bg': '#B7D5B9',
       },
       fontFamily: {
         sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
