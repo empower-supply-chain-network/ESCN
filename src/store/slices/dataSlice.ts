@@ -1,8 +1,28 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier,WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
-import { getFounders, getJobs, getSuccessStories, getPrograms, getMemberBenefits, getSponsorshipTiers,getWhySponsorBenefits, getSponsorshipBenefits, getPartners  } from '@/services/dataService';
-import { PastEvent } from '@/types'; // Add new type
-import { getPastEvents } from '@/services/dataService'; // Add new service function
+import { 
+  Founder, 
+  Job, 
+  SuccessStory, 
+  Program, 
+  MemberBenefit, 
+  SponsorshipTier, 
+  PastEvent, 
+  WhySponsorBenefit, 
+  SponsorshipBenefit, 
+  Partner 
+} from '@/types';
+import { 
+  getFounders, 
+  getJobs, 
+  getSuccessStories, 
+  getPrograms, 
+  getMemberBenefits, 
+  getSponsorshipTiers, 
+  getPastEvents, 
+  getWhySponsorBenefits, 
+  getSponsorshipBenefits, 
+  getPartners 
+} from '@/services/dataService'; // Add new service function
 
 
 interface DataState {
@@ -12,10 +32,10 @@ interface DataState {
   programs: Program[];
   memberBenefits: MemberBenefit[];
   sponsorshipTiers: SponsorshipTier[];
-  pastEvents: PastEvent[]; 
-  whySponsorBenefits: WhySponsorBenefit[]; // NEW
-  sponsorshipBenefits: SponsorshipBenefit[]; // NEW
-  partners: Partner[]; // // NEW
+  pastEvents: PastEvent[];
+  whySponsorBenefits: WhySponsorBenefit[];
+  sponsorshipBenefits: SponsorshipBenefit[];
+  partners: Partner[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -27,16 +47,28 @@ const initialState: DataState = {
   programs: [],
   memberBenefits: [],
   sponsorshipTiers: [],
-  pastEvents: [], //
-  whySponsorBenefits: [], // NEW
-  sponsorshipBenefits: [], // NEW
-  partners: [], // NEW NEW
+  pastEvents: [],
+  whySponsorBenefits: [],
+  sponsorshipBenefits: [],
+  partners: [],
   status: 'idle',
   error: null,
 };
 
+
 export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
-  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents, whySponsorBenefits, sponsorshipBenefits, partners] = await Promise.all([
+  const [
+    founders, 
+    jobs, 
+    stories, 
+    programs, 
+    memberBenefits, 
+    sponsorshipTiers, 
+    pastEvents, 
+    whySponsorBenefits, 
+    sponsorshipBenefits, 
+    partners
+  ] = await Promise.all([
     getFounders(),
     getJobs(),
     getSuccessStories(),
@@ -44,12 +76,23 @@ export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
     getMemberBenefits(),
     getSponsorshipTiers(),
     getPastEvents(),
-    getPastEvents(),
-    getWhySponsorBenefits(), // NEW
-    getSponsorshipBenefits(), // NEW
-    getPartners(),  // NEW
+    getWhySponsorBenefits(),
+    getSponsorshipBenefits(),
+    getPartners(),
   ]);
-  return { founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents,whySponsorBenefits, sponsorshipBenefits, partners };
+  
+  return { 
+    founders, 
+    jobs, 
+    stories, 
+    programs, 
+    memberBenefits, 
+    sponsorshipTiers, 
+    pastEvents, 
+    whySponsorBenefits, 
+    sponsorshipBenefits, 
+    partners 
+  };
 });
 
 const dataSlice = createSlice({
@@ -63,14 +106,15 @@ const dataSlice = createSlice({
       })
       .addCase(fetchAllData.fulfilled, (state, action) => {
         state.status = 'succeeded';
+        // CORRECTED: All assignments are now correct and use proper casing
         state.founders = action.payload.founders;
         state.jobs = action.payload.jobs;
         state.stories = action.payload.stories;
         state.programs = action.payload.programs;
         state.memberBenefits = action.payload.memberBenefits;
         state.sponsorshipTiers = action.payload.sponsorshipTiers;
-        state.pastEvents = action.payload.pastEvents; 
-        state.whySponsorBenefits = action.payload.whySponsorBenefits; // Incorrect 'W'
+        state.pastEvents = action.payload.pastEvents;
+        state.whySponsorBenefits = action.payload.whySponsorBenefits;
         state.sponsorshipBenefits = action.payload.sponsorshipBenefits;
         state.partners = action.payload.partners;
       })
