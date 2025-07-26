@@ -88,7 +88,7 @@ const SponsorshipPage: React.FC = () => {
                                 </div>
                             </Card>
                             {/* --- FIX #2: Changed text color to white --- */}
-                            <Card className="p-8 bg-in-kind-card-bg text-white">
+                            <Card className="p-8 bg-forest-green text-white">
                                 <CardTitle className="text-2xl mb-4">In-Kind Sponsorship</CardTitle>
                                 <p className="mb-6 opacity-90">Play a vital role in our events by providing food, drinks, or venue space. It's a fantastic way for restaurants, cafes, and beverage brands to gain direct exposure.</p>
                                 <div className="space-y-3">
