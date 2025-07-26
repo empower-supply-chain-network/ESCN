@@ -109,3 +109,25 @@ export interface SuccessStory {
   detailedStory: string[]; // The full story paragraphs
   keyImpact: string[];
 }
+
+// NEW: Interface for the "Why Sponsor" section
+export interface WhySponsorBenefit {
+  id: string;
+  icon: React.ElementType; // We will pass Lucide icon components directly
+  title: string;
+  description: string;
+}
+
+// NEW: Interface for the "Sponsorship Packages" benefits
+export interface SponsorshipBenefit {
+  id: string;
+  title: string;
+  description: string;
+}
+
+// NEW: Interface for a partner logo
+export interface Partner {
+  id: string;
+  name: string;
+  logoUrl: string;
+}

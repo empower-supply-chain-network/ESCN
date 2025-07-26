@@ -1,4 +1,5 @@
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
+import { Users, Handshake, Sparkles, Megaphone, CheckCircle } from 'lucide-react';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent,WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
 
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
@@ -23,6 +24,8 @@ import eventMay2023_1 from '@/assets/images/event-may-2023-1.jpg';
 import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
 import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
 import eventMay2023_4 from '@/assets/images/event-may-2023-4.jpg';
+import sponsorshipHeroImage from '@/assets/images/sponsorship-hero.jpg';
+import placeholderLogo from '@/assets/images/placeholder-logo.png'; // Create a simple placeholder logo if you like
 
 
 export const mockFounders: Founder[] = [
@@ -107,9 +110,30 @@ export const mockMemberBenefits: MemberBenefit[] = [
   { id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', imageUrl: supportImage },
 ];
 
-export const mockSponsorshipTiers: SponsorshipTier[] = [
-  // ... (rest of the data)
+export const mockWhySponsorBenefits: WhySponsorBenefit[] = [
+  { id: '1', icon: Users, title: 'Directly Engage with Talent', description: 'Reach 500+ motivated professionals and students in the supply chain sector.' },
+  { id: '2', icon: Handshake, title: 'Showcase Community Leadership', description: 'Empower new immigrants and youth, demonstrating your commitment to social responsibility.' },
+  { id: '3', icon: Sparkles, title: 'Align Your Brand with Impact', description: 'Associate your brand with innovation, diversity, and positive community empowerment.' },
+  { id: '4', icon: Megaphone, title: 'Amplify Your Promotional Reach', description: 'Gain visibility through our email blasts, LinkedIn, Instagram, and event programs.' },
 ];
+
+export const mockSponsorshipBenefits: SponsorshipBenefit[] = [
+  { id: '1', title: 'Logo Visibility', description: 'Featured on our website, event banners, and promotional materials.' },
+  { id: '2', title: 'Social Media Exposure', description: 'Dedicated spotlight posts on our professional networks.' },
+  { id: '3', title: 'Free Event Tickets', description: 'Complimentary access for your team to network at our events.' },
+  { id: '4', title: 'Networking & Speaking', description: 'Position your team as thought leaders in the industry.' },
+];
+
+export const mockPartners: Partner[] = [
+  { id: '1', name: 'Partner One', logoUrl: placeholderLogo },
+  { id: '2', name: 'Partner Two', logoUrl: placeholderLogo },
+  { id: '3', name: 'Partner Three', logoUrl: placeholderLogo },
+  { id: '4', name: 'Partner Four', logoUrl: placeholderLogo },
+  { id: '5', name: 'Partner Five', logoUrl: placeholderLogo },
+  { id: '6', name: 'Partner Six', logoUrl: placeholderLogo },
+];
+
+export { sponsorshipHeroImage };
 
 export const mockPastEvents: PastEvent[] = [
   {

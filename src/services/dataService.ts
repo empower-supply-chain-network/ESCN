@@ -3,7 +3,7 @@
 
 import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
 // Import the new mock data arrays
-import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers } from '@/data/mockData';
+import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers,mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners } from '@/data/mockData';
 
 import { mockPastEvents } from '@/data/mockData'; // Add new import
 
@@ -42,4 +42,16 @@ export const getSponsorshipTiers = (): Promise<SponsorshipTier[]> => {
 
 export const getPastEvents = (): Promise<PastEvent[]> => {
   return simulateNetworkDelay(mockPastEvents);
+};
+
+export const getWhySponsorBenefits = (): Promise<WhySponsorBenefit[]> => {
+  return simulateNetworkDelay(mockWhySponsorBenefits);
+};
+
+export const getSponsorshipBenefits = (): Promise<SponsorshipBenefit[]> => {
+  return simulateNetworkDelay(mockSponsorshipBenefits);
+};
+
+export const getPartners = (): Promise<Partner[]> => {
+  return simulateNetworkDelay(mockPartners);
 };
