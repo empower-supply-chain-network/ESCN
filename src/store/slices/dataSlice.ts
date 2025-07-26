@@ -36,7 +36,7 @@ const initialState: DataState = {
 };
 
 export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
-  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents,whySponsorBenefits, sponsorshipBenefits, partners] = await Promise.all([
+  const [founders, jobs, stories, programs, memberBenefits, sponsorshipTiers, pastEvents, whySponsorBenefits, sponsorshipBenefits, partners] = await Promise.all([
     getFounders(),
     getJobs(),
     getSuccessStories(),
@@ -70,9 +70,9 @@ const dataSlice = createSlice({
         state.memberBenefits = action.payload.memberBenefits;
         state.sponsorshipTiers = action.payload.sponsorshipTiers;
         state.pastEvents = action.payload.pastEvents; 
-        state.whySponsorBenefits = action.payload.whySponsorBenefits; // NEW
-        state.sponsorshipBenefits = action.payload.sponsorshipBenefits; // NEW
-        state.partners = action.payload.partners;// NEW
+        state.whySponsorBenefits = action.payload.whySponsorBenefits; // Incorrect 'W'
+        state.sponsorshipBenefits = action.payload.sponsorshipBenefits;
+        state.partners = action.payload.partners;
       })
       .addCase(fetchAllData.rejected, (state, action) => {
         state.status = 'failed';

@@ -1,6 +1,5 @@
-import { Users, Handshake, Sparkles, Megaphone, CheckCircle } from 'lucide-react';
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent,WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
-
+import { Users, Handshake, Sparkles, Megaphone, CheckCircle, HandCoins } from 'lucide-react';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.png';
 import michelleImage from '@/assets/images/Michelle.jpg';
@@ -108,6 +107,10 @@ export const mockMemberBenefits: MemberBenefit[] = [
   { id: '3', title: 'Mentorship Program', description: 'Match with experienced supply chain professionals for guidance and career development opportunities.', imageUrl: mentorshipImage },
   { id: '4', title: 'Diversity and Inclusion Initiatives', description: 'Participate in inclusive leadership programs to create diverse and welcoming work environments.', imageUrl: inclusionImage },
   { id: '5', title: 'Professional Support Clinics', description: 'Get help with your career through our annually career fair, resume workshops, and certification guidance.', imageUrl: supportImage },
+];
+
+export const mockSponsorshipTiers: SponsorshipTier[] = [
+  // ... (all the sponsorship tier data)
 ];
 
 export const mockWhySponsorBenefits: WhySponsorBenefit[] = [

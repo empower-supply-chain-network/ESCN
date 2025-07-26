@@ -6,7 +6,7 @@ import { fetchAllData } from '@/store/slices/dataSlice';
 import { sponsorshipHeroImage } from '@/data/mockData';
 import SectionTitle from '@/components/shared/SectionTitle';
 import Loader from '@/components/shared/Loader';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent, CardTitle } from '@/components/ui/Card'; 
 import { Button } from '@/components/ui/Button';
 import { CheckCircle, HandCoins } from 'lucide-react';
 

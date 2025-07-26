@@ -1,57 +1,26 @@
 // MOCK DATA SERVICE
 // This simulates fetching data from a Firestore database.
 
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent } from '@/types';
-// Import the new mock data arrays
-import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers,mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners } from '@/data/mockData';
-
-import { mockPastEvents } from '@/data/mockData'; // Add new import
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
+import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers, mockPastEvents, mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners } from '@/data/mockData';
 
 const simulateNetworkDelay = <T>(data: T): Promise<T> => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(data);
-    }, 500); // 500ms delay
+    }, 100); // 500ms delay
   });
 };
 
-export const getFounders = (): Promise<Founder[]> => {
-  return simulateNetworkDelay(mockFounders);
-};
+export const getFounders = (): Promise<Founder[]> => simulateNetworkDelay(mockFounders);
+export const getJobs = (): Promise<Job[]> => simulateNetworkDelay(mockJobs);
+export const getSuccessStories = (): Promise<SuccessStory[]> => simulateNetworkDelay(mockSuccessStories);
+export const getPrograms = (): Promise<Program[]> => simulateNetworkDelay(mockPrograms);
+export const getMemberBenefits = (): Promise<MemberBenefit[]> => simulateNetworkDelay(mockMemberBenefits);
+export const getSponsorshipTiers = (): Promise<SponsorshipTier[]> => simulateNetworkDelay(mockSponsorshipTiers);
+export const getPastEvents = (): Promise<PastEvent[]> => simulateNetworkDelay(mockPastEvents);
+export const getWhySponsorBenefits = (): Promise<WhySponsorBenefit[]> => simulateNetworkDelay(mockWhySponsorBenefits);
+export const getSponsorshipBenefits = (): Promise<SponsorshipBenefit[]> => simulateNetworkDelay(mockSponsorshipBenefits);
+export const getPartners = (): Promise<Partner[]> => simulateNetworkDelay(mockPartners);
 
-export const getJobs = (): Promise<Job[]> => {
-  return simulateNetworkDelay(mockJobs);
-};
 
-export const getSuccessStories = (): Promise<SuccessStory[]> => {
-  return simulateNetworkDelay(mockSuccessStories);
-};
-
-export const getPrograms = (): Promise<Program[]> => {
-    return simulateNetworkDelay(mockPrograms);
-};
-
-// NEW: Add these two functions
-export const getMemberBenefits = (): Promise<MemberBenefit[]> => {
-  return simulateNetworkDelay(mockMemberBenefits);
-};
-
-export const getSponsorshipTiers = (): Promise<SponsorshipTier[]> => {
-  return simulateNetworkDelay(mockSponsorshipTiers);
-};
-
-export const getPastEvents = (): Promise<PastEvent[]> => {
-  return simulateNetworkDelay(mockPastEvents);
-};
-
-export const getWhySponsorBenefits = (): Promise<WhySponsorBenefit[]> => {
-  return simulateNetworkDelay(mockWhySponsorBenefits);
-};
-
-export const getSponsorshipBenefits = (): Promise<SponsorshipBenefit[]> => {
-  return simulateNetworkDelay(mockSponsorshipBenefits);
-};
-
-export const getPartners = (): Promise<Partner[]> => {
-  return simulateNetworkDelay(mockPartners);
-};
