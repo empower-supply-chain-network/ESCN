@@ -6,9 +6,7 @@ import { fetchAllData } from '@/store/slices/dataSlice';
 // 1. Import the new hero image
 import sponsorshipHeroImageLight from '@/assets/images/sponsorship-hero-light.jpg';
 import SectionTitle from '@/components/shared/SectionTitle';
-import Loader from '@/components/shared/Loader';
-import { Card, CardContent, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
+import { Card, CardTitle } from '@/components/ui/Card';
 import { CheckCircle, HandCoins } from 'lucide-react';
 
 const SponsorshipPage: React.FC = () => {
@@ -20,6 +18,10 @@ const SponsorshipPage: React.FC = () => {
             dispatch(fetchAllData());
         }
     }, [status, dispatch]);
+
+    if (status !== 'succeeded') {
+        return <div className="py-28"><SectionTitle>Loading...</SectionTitle></div>;
+    }
 
     return (
         <>
