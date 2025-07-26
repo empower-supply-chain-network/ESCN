@@ -5,7 +5,7 @@ import { useTypedSelector } from '@/hooks/useTypedSelector';
 import { fetchAllData } from '@/store/slices/dataSlice';
 import { sponsorshipHeroImage } from '@/data/mockData';
 import SectionTitle from '@/components/shared/SectionTitle';
-import { Card, CardContent, CardTitle } from '@/components/ui/Card'; // CORRECTED IMPORT
+import { Card, CardContent, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { CheckCircle, HandCoins } from 'lucide-react';
 
@@ -24,7 +24,6 @@ const SponsorshipPage: React.FC = () => {
         }
     }, [status, dispatch]);
 
-    // This is a clean way to handle the loading state for the whole page
     if (status !== 'succeeded') {
         return (
             <div className="py-28 bg-white-linen text-center">
@@ -40,11 +39,14 @@ const SponsorshipPage: React.FC = () => {
                 className="relative flex items-center justify-center w-full h-[70vh] text-center bg-cover bg-center" 
                 style={{ backgroundImage: `url(${sponsorshipHeroImage})` }}
             >
+                {/* Added a semi-transparent overlay to help text stand out */}
+                <div className="absolute inset-0 bg-black/30"></div>
                 <div className="relative z-10 p-4">
-                    <h1 className="text-5xl font-bold md:text-6xl text-hero-text-green" style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.5)' }}>
+                    {/* --- FIX #1: Changed text color to white --- */}
+                    <h1 className="text-5xl font-bold md:text-6xl text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
                         Shape the Future of Canada's Supply Chain.
                     </h1>
-                    <p className="mt-4 text-xl md:text-2xl max-w-3xl mx-auto text-hero-text-green" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.5)' }}>
+                    <p className="mt-4 text-xl md:text-2xl max-w-3xl mx-auto text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
                         Partner with us to empower the next generation of industry leaders.
                     </p>
                 </div>
@@ -85,19 +87,22 @@ const SponsorshipPage: React.FC = () => {
                                     ))}
                                 </div>
                             </Card>
-                            <Card className="p-8 bg-in-kind-card-bg text-forest-green">
+                            {/* --- FIX #2: Changed text color to white --- */}
+                            <Card className="p-8 bg-in-kind-card-bg text-white">
                                 <CardTitle className="text-2xl mb-4">In-Kind Sponsorship</CardTitle>
-                                <p className="mb-6">Play a vital role in our events by providing food, drinks, or venue space. It's a fantastic way for restaurants, cafes, and beverage brands to gain direct exposure.</p>
+                                <p className="mb-6 opacity-90">Play a vital role in our events by providing food, drinks, or venue space. It's a fantastic way for restaurants, cafes, and beverage brands to gain direct exposure.</p>
                                 <div className="space-y-3">
-                                    <div className="flex items-center gap-3"><HandCoins className="w-5 h-5 text-emerald-green" />Gain on-site exposure to 500+ attendees.</div>
-                                    <div className="flex items-center gap-3"><HandCoins className="w-5 h-5 text-emerald-green" />Receive prominent logo display and verbal recognition.</div>
+                                    {/* Icons should pop, so let's make them white too */}
+                                    <div className="flex items-center gap-3"><HandCoins className="w-5 h-5 text-white" />Gain on-site exposure to 500+ attendees.</div>
+                                    <div className="flex items-center gap-3"><HandCoins className="w-5 h-5 text-white" />Receive prominent logo display and verbal recognition.</div>
                                 </div>
                             </Card>
                         </div>
                     </section>
 
                     {/* 4. Call to Action Section */}
-                    <section className="text-center bg-gray-100 p-12 rounded-lg">
+                    {/* --- FIX #3: Removed background color and padding --- */}
+                    <section className="text-center py-12">
                         <h2 className="text-3xl font-bold text-forest-green">Ready to Make an Impact?</h2>
                         <p className="max-w-3xl mx-auto mt-4 text-lg text-text-secondary">Let's build a stronger, more inclusive supply chain community together. Download our full sponsorship package to see detailed tiers or contact us to create a custom partnership.</p>
                         <div className="flex flex-col items-center justify-center gap-4 mt-8 sm:flex-row">
