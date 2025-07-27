@@ -5,9 +5,11 @@ import { useTypedSelector } from '@/hooks/useTypedSelector';
 import { fetchAllData } from '@/store/slices/dataSlice';
 import { Program } from '@/types';
 import SectionTitle from '@/components/shared/SectionTitle';
-import Loader from '@/components/shared/Loader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+
+// --- 1. IMPORT THE NEW BANNER IMAGE ---
+import programsBannerImage from '@/assets/images/Programs-banner.jpeg';
 
 // A small, self-contained component for displaying one program
 const ProgramCard: React.FC<{ program: Program; onClick: () => void }> = ({ program, onClick }) => (
@@ -45,11 +47,10 @@ const MentorshipDetails = () => (
 
 
 const ProgramsPage: React.FC = () => {
-  // State to track which program detail to show
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
   
   const dispatch = useDispatch<AppDispatch>();
-  const { programs, status, error } = useTypedSelector((state) => state.data);
+  const { programs, status } = useTypedSelector((state) => state.data);
 
   useEffect(() => {
     if (status !== 'succeeded') {
@@ -67,28 +68,48 @@ const ProgramsPage: React.FC = () => {
   }
 
   return (
-    <div className="py-28 bg-white-linen">
-      <div className="container max-w-6xl mx-auto px-4">
-        <SectionTitle>Programs & Initiatives</SectionTitle>
-        <div className="mt-12">
-          {status === 'loading' && <Loader />}
-          {status === 'failed' && <p className="text-center text-red-500">Error: {error}</p>}
-          {status === 'succeeded' && (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {programs && programs.map((program) => (
-                <ProgramCard 
-                    key={program.id} 
-                    program={program} 
-                    onClick={() => setSelectedProgram(program.id)}
-                />
-              ))}
+    <>
+        {/* --- 2. NEW BANNER SECTION --- */}
+        <section 
+            className="relative flex items-center justify-center w-full h-[40vh] text-center bg-cover bg-center"
+            style={{ backgroundImage: `url(${programsBannerImage})` }}
+        >
+            <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay for readability */}
+            <div className="relative z-10 p-4 text-white">
+                <h1 className="text-4xl md:text-5xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+                    Your Pathway to Professional Growth
+                </h1>
+                <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
+                    From learning to leadership, we provide the tools for your success.
+                </p>
             </div>
-          )}
-          {/* Conditionally render the details component */}
-          {selectedProgram && renderProgramDetails()}
+        </section>
+
+        {/* --- 3. EXISTING CONTENT SECTION (with adjusted padding) --- */}
+        <div className="py-20 bg-white-linen">
+          <div className="container max-w-6xl mx-auto px-4">
+            <SectionTitle>Programs & Initiatives</SectionTitle>
+            <div className="mt-12">
+              {status !== 'succeeded' ? (
+                <p className="text-center">Loading programs...</p>
+              ) : (
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {programs && programs.map((program) => (
+                    <ProgramCard 
+                        key={program.id} 
+                        program={program} 
+                        // Improved logic: clicking the same card again will hide the details
+                        onClick={() => setSelectedProgram(program.id === selectedProgram ? null : program.id)}
+                    />
+                  ))}
+                </div>
+              )}
+              {/* This part remains exactly the same */}
+              {selectedProgram && renderProgramDetails()}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+    </>
   );
 };
 
