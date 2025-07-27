@@ -8,7 +8,7 @@ import { Founder } from '@/types';
 import { Card } from '@/components/ui/Card';
 import Loader from '@/components/shared/Loader';
 
-// Component for the text content
+// Component for the text content - This is correct.
 const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
   <div className="flex-1 p-6 md:p-8">
     <h3 className="text-2xl font-bold text-forest-green whitespace-nowrap">{founder.name}</h3>
@@ -27,25 +27,22 @@ const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
 
 // Component for the image content - UPDATED
 const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => (
-  // We keep the overall structure for spacing
   <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
-    {/*
-      THE DEFINITIVE FIX: Changed from a circle to a rounded rectangle.
-      `rounded-lg` creates a nice, soft corner.
-      We use a fixed width and an aspect ratio container to maintain the photo's shape.
-    */}
     <div className="w-48 aspect-[3/4] rounded-lg overflow-hidden bg-gray-200 shadow-md">
       <img 
         src={founder.imageUrl} 
         alt={founder.name} 
         className="w-full h-full object-cover"
+        // FIX: Added object-position to correctly frame the portrait.
+        // This tells the browser to focus on the upper part of the image.
+        style={{ objectPosition: 'center 30%' }}
       />
     </div>
   </div>
 );
 
 
-// The main card component that arranges the text and image
+// The main card component - This is correct.
 const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
   return (
     <motion.div
@@ -65,7 +62,7 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
 };
 
 
-// The main section component
+// The main section component - This is correct.
 const FoundersSection = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { founders, status, error } = useTypedSelector((state) => state.data);
