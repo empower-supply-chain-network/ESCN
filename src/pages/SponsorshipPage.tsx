@@ -36,7 +36,7 @@ const SponsorshipPage: React.FC = () => {
         <>
             {/* 1. Hero Section */}
             <section 
-                className="relative flex items-center justify-center w-full h-[70vh] text-center bg-cover bg-center" 
+                className="relative flex items-center justify-center w-full h-[60vh] text-center bg-cover bg-center" 
                 style={{ backgroundImage: `url(${sponsorshipHeroImage})` }}
             >
                 {/* Added a semi-transparent overlay to help text stand out */}
