@@ -71,7 +71,7 @@ const ProgramsPage: React.FC = () => {
     <>
         {/* --- 2. NEW BANNER SECTION --- */}
         <section 
-            className="relative flex items-center justify-center w-full h-[60vh] text-center bg-cover bg-center"
+            className="relative flex items-center justify-center w-full h-[50vh] text-center bg-cover bg-center"
             style={{ backgroundImage: `url(${programsBannerImage})` }}
         >
             <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay for readability */}
