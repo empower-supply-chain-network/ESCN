@@ -76,10 +76,10 @@ const ProgramsPage: React.FC = () => {
         >
             <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay for readability */}
             <div className="relative z-10 p-4 text-white">
-                <h1 className="text-4xl md:text-5xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+                <h1 className="text-5xl font-bold md:text-6xl text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
                     Your Pathway to Professional Growth
                 </h1>
-                <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
+                <p className="mt-4 text-xl md:text-2xl max-w-3xl mx-auto text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
                     From learning to leadership, we provide the tools for your success.
                 </p>
             </div>
