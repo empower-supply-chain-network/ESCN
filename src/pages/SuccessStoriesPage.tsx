@@ -45,8 +45,11 @@ const SuccessStoriesPage: React.FC = () => {
     <>
         {/* --- 2. NEW BANNER SECTION --- */}
         <section 
-            className="relative flex items-center justify-center w-full h-[50vh] text-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${successBannerImage})` }}
+            className="relative flex items-center justify-center w-full h-[50vh] text-center bg-cover"
+            style={{ 
+                      backgroundImage: `url(${successBannerImage})`,
+                      backgroundPosition: 'center center' // Let's ensure this is centered
+                  }}
         >
             <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for readability */}
             <div className="relative z-10 p-4 text-white">
