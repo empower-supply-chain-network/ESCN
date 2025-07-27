@@ -10,8 +10,11 @@ const JobsPage: React.FC = () => {
     <>
         {/* --- 2. NEW BANNER SECTION --- */}
         <section 
-            className="relative flex items-center justify-center w-full h-[60vh] text-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${jobBannerImage})` }}
+            className="relative flex items-center justify-center w-full h-[50vh] text-center bg-cover" // bg-center is now controlled by style
+            style={{ 
+                backgroundImage: `url(${jobBannerImage})`,
+                backgroundPosition: 'center 30%' // This shifts the image down
+            }}
         >
             <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for readability */}
             <div className="relative z-10 p-4 text-white">
