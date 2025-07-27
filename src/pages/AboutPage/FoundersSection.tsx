@@ -8,8 +8,9 @@ import { Founder } from '@/types';
 import { Card } from '@/components/ui/Card';
 import Loader from '@/components/shared/Loader';
 
-// Component for the text content - This is correct.
+// Component for the text content
 const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
+  // The `flex-1` class makes this div "greedy" and take up available space.
   <div className="flex-1 p-6 md:p-8">
     <h3 className="text-2xl font-bold text-forest-green whitespace-nowrap">{founder.name}</h3>
     <h4 className="mb-4 font-semibold uppercase text-emerald-green">{founder.subtitle}</h4>
@@ -25,24 +26,36 @@ const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
   </div>
 );
 
-// Component for the image content - UPDATED
-const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => (
-  <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
-    <div className="w-48 aspect-[3/4] rounded-lg overflow-hidden bg-gray-200 shadow-md">
-      <img 
-        src={founder.imageUrl} 
-        alt={founder.name} 
-        className="w-full h-full object-cover"
-        // FIX: Added object-position to correctly frame the portrait.
-        // This tells the browser to focus on the upper part of the image.
-        style={{ objectPosition: 'center 30%' }}
+// Component for the image content
+const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => {
+  const getBackgroundPosition = () => {
+    if (founder.name.includes('Shuya')) {
+      return 'center 35%'; // Nudges her photo down
+    }
+    if (founder.name.includes('Michelle')) {
+      return 'center 30%'; // Nudges her photo down to show her head
+    }
+    return 'center center';
+  };
+
+  return (
+    // THE MAGIC KEY: `ml-auto` pushes this entire block to the right.
+    <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
+      <div
+        className="w-[120px] h-[120px] rounded-full bg-gray-200 bg-cover"
+        style={{
+          backgroundImage: `url(${founder.imageUrl})`,
+          backgroundPosition: getBackgroundPosition(),
+        }}
+        role="img"
+        aria-label={`Photo of ${founder.name}`}
       />
     </div>
-  </div>
-);
+  );
+};
 
 
-// The main card component - This is correct.
+// The main card component that arranges the text and image
 const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
   return (
     <motion.div
@@ -52,6 +65,7 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
       transition={{ duration: 0.5 }}
     >
       <Card className="overflow-hidden h-full">
+        {/* This flex container now perfectly mimics the original CSS */}
         <div className="flex flex-col md:flex-row h-full items-start">
           <TextContent founder={founder} />
           <ImageContent founder={founder} />
@@ -62,7 +76,7 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
 };
 
 
-// The main section component - This is correct.
+// The main section component
 const FoundersSection = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { founders, status, error } = useTypedSelector((state) => state.data);
