@@ -10,11 +10,13 @@ import Loader from '@/components/shared/Loader';
 
 // Component for the text content
 const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
-  // The `flex-1` class makes this div "greedy" and take up available space.
-  <div className="flex-1 p-6 md:p-8">
-    <h3 className="text-2xl font-bold text-forest-green whitespace-nowrap">{founder.name}</h3>
-    <h4 className="mb-4 font-semibold uppercase text-emerald-green">{founder.subtitle}</h4>
-    <div className="space-y-4">
+  // The text is now centered
+  <div className="text-center">
+    {/* The whitespace-nowrap is no longer needed and has been removed */}
+    <h3 className="text-2xl font-bold text-forest-green">{founder.name}</h3>
+    <h4 className="mb-6 font-semibold uppercase text-emerald-green">{founder.subtitle}</h4>
+    {/* The paragraphs themselves remain left-aligned for readability */}
+    <div className="space-y-4 text-left">
       {founder.story.map((paragraph, pIndex) => (
         <p
           key={pIndex}
@@ -29,18 +31,14 @@ const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
 // Component for the image content
 const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => {
   const getBackgroundPosition = () => {
-    if (founder.name.includes('Shuya')) {
-      return 'center 35%'; // Nudges her photo down
-    }
-    if (founder.name.includes('Michelle')) {
-      return 'center 30%'; // Nudges her photo down to show her head
-    }
+    if (founder.name.includes('Shuya')) return 'center 35%';
+    if (founder.name.includes('Michelle')) return 'center 30%';
     return 'center center';
   };
 
   return (
-    // THE MAGIC KEY: `ml-auto` pushes this entire block to the right.
-    <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
+    // Added margin-bottom to create space between the photo and text
+    <div className="mb-6 flex-shrink-0">
       <div
         className="w-[120px] h-[120px] rounded-full bg-gray-200 bg-cover"
         style={{
@@ -55,7 +53,7 @@ const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => {
 };
 
 
-// The main card component that arranges the text and image
+// The main card component, now with the new vertical layout
 const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
   return (
     <motion.div
@@ -65,10 +63,15 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
       transition={{ duration: 0.5 }}
     >
       <Card className="overflow-hidden h-full">
-        {/* This flex container now perfectly mimics the original CSS */}
-        <div className="flex flex-col md:flex-row h-full items-start">
-          <TextContent founder={founder} />
+        {/*
+          THE LAYOUT FIX:
+          - Changed to `flex-col` to stack items vertically.
+          - Added `items-center` to center them horizontally.
+          - Added padding directly to this container.
+        */}
+        <div className="flex flex-col items-center h-full p-6 md:p-8">
           <ImageContent founder={founder} />
+          <TextContent founder={founder} />
         </div>
       </Card>
     </motion.div>
@@ -76,7 +79,7 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
 };
 
 
-// The main section component
+// The main section component - no changes needed here.
 const FoundersSection = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { founders, status, error } = useTypedSelector((state) => state.data);
