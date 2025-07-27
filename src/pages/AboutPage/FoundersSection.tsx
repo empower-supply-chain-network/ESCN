@@ -10,7 +10,6 @@ import Loader from '@/components/shared/Loader';
 
 // Component for the text content
 const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
-  // FIX: Added `flex-1` to make this container "greedy" and take up space.
   <div className="flex-1 p-6 md:p-8">
     <h3 className="text-2xl font-bold text-forest-green whitespace-nowrap">{founder.name}</h3>
     <h4 className="mb-4 font-semibold uppercase text-emerald-green">{founder.subtitle}</h4>
@@ -26,29 +25,24 @@ const TextContent: React.FC<{ founder: Founder }> = ({ founder }) => (
   </div>
 );
 
-// Component for the image content
-const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => {
-  const getBackgroundPosition = () => {
-    if (founder.name.includes('Shuya')) return 'center 35%';
-    if (founder.name.includes('Michelle')) return 'center 30%';
-    return 'center center';
-  };
-
-  return (
-    // THE MAGIC KEY: `ml-auto` pushes this entire block to the right.
-    <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
-      <div
-        className="w-[120px] h-[120px] rounded-full bg-gray-200 bg-cover"
-        style={{
-          backgroundImage: `url(${founder.imageUrl})`,
-          backgroundPosition: getBackgroundPosition(),
-        }}
-        role="img"
-        aria-label={`Photo of ${founder.name}`}
+// Component for the image content - UPDATED
+const ImageContent: React.FC<{ founder: Founder }> = ({ founder }) => (
+  // We keep the overall structure for spacing
+  <div className="p-6 md:p-8 flex items-start ml-auto flex-shrink-0">
+    {/*
+      THE DEFINITIVE FIX: Changed from a circle to a rounded rectangle.
+      `rounded-lg` creates a nice, soft corner.
+      We use a fixed width and an aspect ratio container to maintain the photo's shape.
+    */}
+    <div className="w-48 aspect-[3/4] rounded-lg overflow-hidden bg-gray-200 shadow-md">
+      <img 
+        src={founder.imageUrl} 
+        alt={founder.name} 
+        className="w-full h-full object-cover"
       />
     </div>
-  );
-};
+  </div>
+);
 
 
 // The main card component that arranges the text and image
@@ -61,7 +55,6 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
       transition={{ duration: 0.5 }}
     >
       <Card className="overflow-hidden h-full">
-        {/* This flex container now perfectly mimics the original CSS */}
         <div className="flex flex-col md:flex-row h-full items-start">
           <TextContent founder={founder} />
           <ImageContent founder={founder} />
@@ -72,7 +65,7 @@ const FounderCard: React.FC<{ founder: Founder }> = ({ founder }) => {
 };
 
 
-// The main section component - no changes needed here.
+// The main section component
 const FoundersSection = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { founders, status, error } = useTypedSelector((state) => state.data);

@@ -1,7 +1,7 @@
 import { Users, Handshake, Sparkles, Megaphone } from 'lucide-react';
 import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
 // --- IMPORT THE IMAGES AT THE TOP ---
-import shuyaImage from '@/assets/images/Shuya.png';
+import shuyaImage from '@/assets/images/Shuya.jpeg';
 import michelleImage from '@/assets/images/Michelle.jpg';
 
 // Import all the new images for the benefits
@@ -30,29 +30,34 @@ import sponsorshipHeroImage from '@/assets/images/sponsorship-hero.jpg';
 export const mockFounders: Founder[] = [
   {
     id: '1',
-    name: 'Co-Founder - Shuya, Zhai',
-    title: 'RESILIENCE AND GROWTH IN MONTREAL',
-    subtitle: 'RESILIENCE AND GROWTH IN MONTREAL',
+    name: 'Co-Founder - Shuya Zhai',
+    title: 'RESILIENCE, LEADERSHIP & EMPOWERMENT IN MONTREAL',
+    subtitle: 'RESILIENCE, LEADERSHIP & EMPOWERMENT IN MONTREAL',
     story: [
-      "Born in China, my path took me across continents, from Australia to London, UK to McGill University in Montreal. Little did I know that beyond the threshold of graduation lay my darkest chapter - a period of relentless job rejections that echoed with the deafening silence of despair and solitude.",
-      "Eventually, securing a role as a logistics and executive assistant ignited a spark of hope, serving as the cornerstone of my career. Evolving within the supply chain arena, each decision propelled me forward, culminating in my current role as Senior manager overseeing imports and transport operations.",
-      "<strong>Embracing the challenges, I've emerged stronger, believing that adversity breeds resilience.</strong> Beyond the corporate realm, community volunteering has been my solace, sparking vision to create a supportive community for those enduring similar struggles."
+      "Born in China, my journey has taken me across continents—from Australia to London, and finally to Montreal, where I graduated from McGill University. I never imagined that the period after graduation would be my most defining chapter—a time marked by countless job rejections and the deafening silence of uncertainty.",
+      "But from that darkness, I rose. Starting as a logistics and executive assistant, I slowly built my path—earning trust, gaining experience, and moving steadily into leadership. Today, I proudly lead strategic operations in global logistics, overseeing complex freight networks and driving results in a fast-paced industry.",
+      "<strong>I didn't wait for the doors to open—I pushed through and made my own way.</strong> Each role became a stepping stone, each challenge a lesson, and each success a reminder of the power of persistence—especially as a woman navigating a traditionally male-dominated field.",
+      "Now, I see many individuals standing where I once stood—uncertain, overlooked, or just starting out. <strong>And because I've been there, I'm here to help.</strong> I'm committed to building a space where others can rise, thrive, and be seen.",
+      "Beyond the corporate world, volunteering has been my anchor and inspiration. Empowering others through community work is more than a mission—it's a promise to pass on the strength that once helped me stand tall."
     ],
-    imageUrl: shuyaImage,
+    imageUrl: shuyaImage, // Using the new image
   },
   {
     id: '2',
-    name: 'Co-Founder - Michelle, Zhao',
+    name: 'Co-Founder – Ruihua(Michelle), Zhao',
     title: 'REWRITE A NEW CHAPTER IN CANADA',
     subtitle: 'REWRITE A NEW CHAPTER IN CANADA',
     story: [
-      "After over 15 years in China's supply chain management, moving to Canada in 2017 presented unexpected challenges. Lacking local experience and education, I felt helpless and struggled to restart my career. Through determination and reeducation, I've worked as an Import & Export Specialist in Canada for over 4 years, earning CPIM and CSCP certifications, and transitioning to a supply planning role.",
-      "<strong>This personal journey highlighted the struggles that many new immigrants face despite their excellent backgrounds.</strong> They possess valuable skills and experience that could greatly benefit local companies, but often lack the support to navigate the Canadian industry. This realization inspired me to co-found this organization, aiming to empower those facing similar struggles by providing support on career paths, reeducation, networking, skill learning, and experience sharing. I want to help them find a better life in Canada, just as I did."
+      "After more than 15 years in supply chain management in China—including <strong>7 years in a leadership role at a Fortune 500 company</strong>—moving to Canada in 2017 brought challenges I never imagined. Despite my global experience, the lack of local credentials and networks left me feeling lost and uncertain about my future.",
+      "Instead of giving up, <strong>I chose to grow.</strong> I embraced a lifelong learning mindset—earning CPIM and CSCP certifications and even pursuing a university degree while working full-time. This commitment helped me transition from an Import & Export Specialist to a Supply Planner, a role I had aspired to for 2 years.",
+      "This journey taught me that continuous learning isn't just a strategy—it's a necessity to thrive in an ever-changing world. It also opened my eyes to the struggles many talented newcomers face despite their impressive experience. They bring so much value, yet often lack the support and resources to restart their careers.",
+      "That realization inspired me to co-found this organization—a community built on support, knowledge-sharing, and growth. I built this platform <strong>for people like me — and people like you</strong> who deserve support, whether you're starting your career or restarting it.",
+      "My purpose is simple: to help you grow, rise, and lead.",
+      "Let's rewrite our new chapters, together."
     ],
     imageUrl: michelleImage,
   },
 ];
-
 export const mockJobs: Job[] = [];
 
 // --- THIS IS THE CORRECTED SECTION ---
