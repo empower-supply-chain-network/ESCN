@@ -1,8 +1,8 @@
 // MOCK DATA SERVICE
 // This simulates fetching data from a Firestore database.
 
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
-import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers, mockPastEvents, mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners,mockUpcomingEvents } from '@/data/mockData';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner,UpcomingEvent } from '@/types';
+import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers, mockPastEvents, mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners, mockUpcomingEvents } from '@/data/mockData';
 
 const simulateNetworkDelay = <T>(data: T): Promise<T> => {
   return new Promise(resolve => {
