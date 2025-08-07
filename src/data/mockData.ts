@@ -1,5 +1,5 @@
 import { Users, Handshake, Sparkles, Megaphone } from 'lucide-react';
-import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
+import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner, UpcomingEvent } from '@/types';
 // --- IMPORT THE IMAGES AT THE TOP ---
 import shuyaImage from '@/assets/images/Shuya.jpeg';
 import michelleImage from '@/assets/images/Michelle.jpg';
@@ -24,6 +24,7 @@ import eventMay2023_2 from '@/assets/images/event-may-2023-2.jpg';
 import eventMay2023_3 from '@/assets/images/event-may-2023-3.jpg';
 import eventMay2023_4 from '@/assets/images/event-may-2023-4.jpg';
 import sponsorshipHeroImage from '@/assets/images/sponsorship-hero.jpg';
+import augustWebinarPoster from '@/assets/images/August-Webinar.png';
 // Create a simple placeholder logo if you like
 
 
@@ -179,4 +180,24 @@ export const mockPastEvents: PastEvent[] = [
         "This informal launch was driven by a shared vision: to <strong>build a trusted support network</strong> that empowers newcomers with professional insights, local resources, and industry access."
     ]
   },
+];
+
+export const mockUpcomingEvents: UpcomingEvent[] = [
+  {
+    id: 'a-flavour-of-modern-ai',
+    date: 'August 29, 2025',
+    time: '12:30PM - 1:30PM EST',
+    title: 'A Flavour of Modern AI',
+    tagline: 'Explore how AI is transforming jobs, industries, and the future of work.',
+    speakerName: 'Hanyin CHEN',
+    speakerTitle: 'President & CEO, ASKAFOX INC.\nC2 Montreal "Innovator of the year 2024"',
+    speakerBio: [
+      'Material engineering by training',
+      'Trilingual entrepreneur in AI & supply chain',
+      'Former executive in the energy & mobility sectors',
+      'Founder of a top 100 AI company in Canada'
+    ],
+    posterUrl: augustWebinarPoster,
+    registrationLink: 'https://forms.gle/FTyNn1rj2SW9NPAH7'
+  }
 ];

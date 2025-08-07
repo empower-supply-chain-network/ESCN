@@ -17,6 +17,7 @@ import JoinPage from './pages/JoinPage';
 import SponsorshipPage from './pages/SponsorshipPage';
 import EventDetailPage from './pages/EventDetailPage';
 import StoryDetailPage from './pages/StoryDetailPage';
+import UpcomingEventDetailPage from './pages/UpcomingEventDetailPage';
 
 
 // Modal Components and State Management
@@ -63,6 +64,8 @@ function App() {
           <Route path="/sponsorship" element={<SponsorshipPage />} />
           <Route path="/events/:eventId" element={<EventDetailPage />} />
           <Route path="/success-stories/:storyId" element={<StoryDetailPage />} />
+          {/* 2. Add the new dynamic route for upcoming event details */}
+          <Route path="/events/upcoming/:eventId" element={<UpcomingEventDetailPage />} />
         </Routes>
       </main>
       <Footer />

@@ -2,7 +2,7 @@
 // This simulates fetching data from a Firestore database.
 
 import { Founder, Job, SuccessStory, Program, MemberBenefit, SponsorshipTier, PastEvent, WhySponsorBenefit, SponsorshipBenefit, Partner } from '@/types';
-import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers, mockPastEvents, mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners } from '@/data/mockData';
+import { mockFounders, mockJobs, mockSuccessStories, mockPrograms, mockMemberBenefits, mockSponsorshipTiers, mockPastEvents, mockWhySponsorBenefits, mockSponsorshipBenefits, mockPartners,mockUpcomingEvents } from '@/data/mockData';
 
 const simulateNetworkDelay = <T>(data: T): Promise<T> => {
   return new Promise(resolve => {
@@ -22,5 +22,6 @@ export const getPastEvents = (): Promise<PastEvent[]> => simulateNetworkDelay(mo
 export const getWhySponsorBenefits = (): Promise<WhySponsorBenefit[]> => simulateNetworkDelay(mockWhySponsorBenefits);
 export const getSponsorshipBenefits = (): Promise<SponsorshipBenefit[]> => simulateNetworkDelay(mockSponsorshipBenefits);
 export const getPartners = (): Promise<Partner[]> => simulateNetworkDelay(mockPartners);
+export const getUpcomingEvents = (): Promise<UpcomingEvent[]> => simulateNetworkDelay(mockUpcomingEvents);
 
 

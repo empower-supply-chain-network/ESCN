@@ -131,3 +131,16 @@ export interface Partner {
   name: string;
   logoUrl: string;
 }
+
+export interface UpcomingEvent {
+  id: string;
+  date: string;
+  time: string;
+  title: string;
+  tagline: string;
+  speakerName: string;
+  speakerTitle: string;
+  speakerBio: string[];
+  posterUrl: string;
+  registrationLink: string;
+}

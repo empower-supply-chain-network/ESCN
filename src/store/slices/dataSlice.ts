@@ -9,7 +9,8 @@ import {
   PastEvent, 
   WhySponsorBenefit, 
   SponsorshipBenefit, 
-  Partner 
+  Partner,
+  UpcomingEvent
 } from '@/types';
 import { 
   getFounders, 
@@ -21,7 +22,8 @@ import {
   getPastEvents, 
   getWhySponsorBenefits, 
   getSponsorshipBenefits, 
-  getPartners 
+  getPartners,
+  getUpcomingEvents
 } from '@/services/dataService'; // Add new service function
 
 
@@ -36,6 +38,7 @@ interface DataState {
   whySponsorBenefits: WhySponsorBenefit[];
   sponsorshipBenefits: SponsorshipBenefit[];
   partners: Partner[];
+  upcomingEvents: UpcomingEvent[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -51,6 +54,7 @@ const initialState: DataState = {
   whySponsorBenefits: [],
   sponsorshipBenefits: [],
   partners: [],
+  upcomingEvents: [], 
   status: 'idle',
   error: null,
 };
@@ -67,7 +71,8 @@ export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
     pastEvents, 
     whySponsorBenefits, 
     sponsorshipBenefits, 
-    partners
+    partners,
+    upcomingEvents
   ] = await Promise.all([
     getFounders(),
     getJobs(),
@@ -79,6 +84,7 @@ export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
     getWhySponsorBenefits(),
     getSponsorshipBenefits(),
     getPartners(),
+    getUpcomingEvents()
   ]);
   
   return { 
@@ -91,7 +97,8 @@ export const fetchAllData = createAsyncThunk('data/fetchAll', async () => {
     pastEvents, 
     whySponsorBenefits, 
     sponsorshipBenefits, 
-    partners 
+    partners,
+    upcomingEvents 
   };
 });
 
@@ -117,6 +124,7 @@ const dataSlice = createSlice({
         state.whySponsorBenefits = action.payload.whySponsorBenefits;
         state.sponsorshipBenefits = action.payload.sponsorshipBenefits;
         state.partners = action.payload.partners;
+        state.upcomingEvents = action.payload.upcomingEvents; 
       })
       .addCase(fetchAllData.rejected, (state, action) => {
         state.status = 'failed';
