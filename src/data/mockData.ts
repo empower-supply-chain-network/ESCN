@@ -37,7 +37,7 @@ export const mockFounders: Founder[] = [
     story: [
       "Born in China, my journey has taken me across continents—from Australia to London, and finally to Montreal, where I graduated from McGill University. I never imagined that the period after graduation would be my most defining chapter—a time marked by countless job rejections and the deafening silence of uncertainty.",
       "But from that darkness, I rose. Starting as a logistics and executive assistant, I slowly built my path—earning trust, gaining experience, and moving steadily into leadership. Today, I proudly lead strategic operations in global logistics, overseeing complex freight networks and driving results in a fast-paced industry.",
-      "<strong>I didn't wait for the doors to open—I pushed through and made my own way.</strong> Each role became a stepping stone, each challenge a lesson, and each success a reminder of the power of persistence—especially as a woman navigating a traditionally male-dominated field.",
+      "<strong>I didn't wait for the doors to open—I pushed through and made my own way.</strong> Each role became a stepping stone, each challenge a lesson, and each success a reminder of the power of persistence.",
       "Now, I see many individuals standing where I once stood—uncertain, overlooked, or just starting out. <strong>And because I've been there, I'm here to help.</strong> I'm committed to building a space where others can rise, thrive, and be seen.",
       "Beyond the corporate world, volunteering has been my anchor and inspiration. Empowering others through community work is more than a mission—it's a promise to pass on the strength that once helped me stand tall."
     ],
